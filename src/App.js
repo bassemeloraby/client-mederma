@@ -1,10 +1,10 @@
 import { Fragment } from "react";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <Fragment>
-    helo
+      <div className="container">helo</div>
     </Fragment>
   );
 }
