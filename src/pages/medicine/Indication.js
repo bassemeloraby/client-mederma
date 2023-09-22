@@ -8,6 +8,7 @@ const url = mainUrl + "indications";
 
 function Indication() {
     const { ScientificName } = useParams();
+    // eslint-disable-next-line
     const [allDrugs, setAllDrugs] = useState([]);
     const [loading, setLoading] = useState(false);
 
