@@ -1,15 +1,16 @@
 import React from "react";
 import { Virtuoso } from "react-virtuoso";
-import { GrSearchAdvanced } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 
 function AllDrugsList({ items }) {
   const navigate = useNavigate();
 
-const handelS =(s)=>{
-  // navigate(`/ScientificName/${drug.ScientificDescriptionCodeRoot}`)
-  navigate(`/ScientificName/${s}`)
-}
+  const handelS = (s) => {
+    navigate(`/ScientificName/${s}`);
+  };
+  const handleIndication = (i) => {
+    navigate(`/indication/${i}`);
+  };
 
   return (
     <div>
@@ -30,13 +31,29 @@ const handelS =(s)=>{
               margin: "5px 0",
             }}
           >
-            <h3>{drug.TradeName}  {drug.Strength} {drug.StrengthUnit}</h3>
+            <h3>
+              {drug.TradeName} {drug.Strength} {drug.StrengthUnit}
+            </h3>
             <h6>
               {drug.ScientificName}{" "}
-              <span style={{ cursor: "pointer",color:"blue" }}  onClick={() =>handelS(drug.ScientificName)}>alternative</span>
-              <GrSearchAdvanced />
+              <span
+                style={{ cursor: "pointer", color: "blue" }}
+                onClick={() => handelS(drug.ScientificName)}
+              >
+                Alternative
+              </span>
             </h6>
-            <h6>{drug.PublicPrice} SR</h6>
+            <h6>
+              {drug.PublicPrice} SR{" "}
+              <span
+                style={{ cursor: "pointer", color: "green" }}
+                onClick={() =>
+                  handleIndication(drug.ScientificName)
+                }
+              >
+                Indication
+              </span>{" "}
+            </h6>
           </div>
         )}
       />{" "}
