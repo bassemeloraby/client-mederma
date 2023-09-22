@@ -1,4 +1,4 @@
-import { useState,Fragment } from "react";
+import { useState, Fragment } from "react";
 
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
@@ -7,7 +7,7 @@ import { NavDropdown } from "react-bootstrap";
 import { Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { mainPages } from "../data";
-import { HiOutlineLogin } from 'react-icons/hi';
+import { HiOutlineLogin } from "react-icons/hi";
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -59,10 +59,16 @@ function Header() {
           </Navbar.Offcanvas>
           {/* website name */}
           <Navbar.Brand>
-            <Link to="/" className="text-light">Medderma</Link>
+            <Link
+              to="/"
+              className="text-light"
+              style={{ textDecoration: "none" }}
+            >
+              <h1>Medderma</h1>
+            </Link>
           </Navbar.Brand>
-        {/* login icon */}
-        <HiOutlineLogin/>
+          {/* login icon */}
+          <HiOutlineLogin />
         </Container>
       </Navbar>
     </Fragment>
