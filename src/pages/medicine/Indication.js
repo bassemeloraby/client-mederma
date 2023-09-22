@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Spinner from "../../components/Spinner";
 // import Table from "react-bootstrap/Table";
-import { mainUrl } from "../../data";
-const url = mainUrl + "indications";
+// import { mainUrl } from "../../data";
+// const url = mainUrl + "indications";
 
 function Indication() {
     const { ScientificName } = useParams();
@@ -16,7 +16,7 @@ function Indication() {
     const fetchAllDrugs = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`${url}`);
+        const res = await axios.get("/indications");
         setLoading(false);
         setAllDrugs(res.data);
         console.log(res.data);
