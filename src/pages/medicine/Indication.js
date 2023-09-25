@@ -11,7 +11,6 @@ function Indication() {
   // eslint-disable-next-line
   const [allDrugs, setAllDrugs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchAllDrugs = async () => {
@@ -29,14 +28,7 @@ function Indication() {
     fetchAllDrugs();
   }, []);
 
-  useEffect(() => {
-    const afilter = allDrugs.filter(
-      (drug) => drug.SCIENTIFIC_NAME === ScientificName
-    );
-    setItems(afilter);
-    console.log(afilter)
-  }, [allDrugs, ScientificName]);
-
+ 
   if (loading) {
     return <Spinner />;
   }
@@ -54,7 +46,9 @@ function Indication() {
           </tr>
         </thead>
         <tbody>
-          {items.map((drug, index) => (
+          {allDrugs.filter(
+            (drug) => drug.SCIENTIFIC_NAME === ScientificName
+          ).map((drug, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{drug.INDICATION}</td>
