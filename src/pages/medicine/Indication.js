@@ -10,6 +10,8 @@ function Indication() {
   const { ScientificName } = useParams();
   const [indications, setIndications] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState([]);
+  const [ind, setInd] = useState([]);
 
   useEffect(() => {
     const fetchIndications = async () => {
@@ -25,9 +27,30 @@ function Indication() {
       }
     };
     fetchIndications();
+    
   }, []);
 
- 
+  useEffect(() => {
+   const filter1 = indications.filter(
+      (drug) => drug.SCIENTIFIC_NAME === ScientificName
+    )
+    setItems(filter1)
+    console.log(filter1)
+
+  }, [indications,ScientificName]);
+
+  useEffect(() => {
+    const unique = items.map((drug) => drug.INDICATION);
+     console.log(unique)
+     setInd(unique)
+   }, [items]);
+  
+   useEffect(() => {
+    const un1 = ind.filter((item,i,ar)=> ar.indexOf(item) === i)
+    console.log(un1)
+   }, [ind]);
+
+
   if (loading) {
     return <Spinner />;
   }
@@ -42,16 +65,16 @@ function Indication() {
             <th>#</th>
             <th>INDICATION</th>
             <th>ICD_10_CODE</th>
+            <th>PHARMACEUTICAL FORM</th>
           </tr>
         </thead>
         <tbody>
-          {indications.filter(
-            (drug) => drug.SCIENTIFIC_NAME === ScientificName
-          ).map((drug, index) => (
+          {items.map((drug, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
               <td>{drug.INDICATION}</td>
               <td> {drug.ICD_10_CODE}</td>
+              <td> {drug.PHARMACEUTICAL_FORM}</td>
             </tr>
           ))}
         </tbody>
