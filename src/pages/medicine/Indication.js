@@ -8,23 +8,23 @@ const url = mainUrl + "indications";
 
 function Indication() {
   const { ScientificName } = useParams();
-  const [allDrugs, setAllDrugs] = useState([]);
+  const [indications, setIndications] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const fetchAllDrugs = async () => {
+    const fetchIndications = async () => {
       setLoading(true);
       try {
         const res = await axios.get(`${url}`);
         setLoading(false);
-        setAllDrugs(res.data);
+        setIndications(res.data);
         console.log(res.data);
       } catch (error) {
         setLoading(false);
         console.log(error);
       }
     };
-    fetchAllDrugs();
+    fetchIndications();
   }, []);
 
  
@@ -45,7 +45,7 @@ function Indication() {
           </tr>
         </thead>
         <tbody>
-          {allDrugs.filter(
+          {indications.filter(
             (drug) => drug.SCIENTIFIC_NAME === ScientificName
           ).map((drug, index) => (
             <tr key={index}>
