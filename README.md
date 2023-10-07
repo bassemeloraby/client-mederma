@@ -1,6 +1,4 @@
-  "proxy":"https://rich-blue-llama-vest.cyclic.cloud/api",
-    "proxy":"https://rich-blue-llama-vest.cyclic.cloud/api",
-
+ 
 
 # Getting Started with Create React App
 
