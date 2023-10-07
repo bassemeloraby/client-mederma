@@ -42,7 +42,6 @@ function ScientificName() {
             <th>#</th>
             <th>Trade Name</th>
             <th>Pharmaceutical Form</th>
-            <th>Scientific Name</th>
             <th>Public Price</th>
           </tr>
         </thead>
@@ -54,7 +53,6 @@ function ScientificName() {
                 <td>{index + 1}</td>
                 <td>{drug.TradeName} {drug.Strength} {drug.StrengthUnit}</td>
                 <td> {drug.PharmaceuticalForm}</td>
-                <td> {drug.ScientificName}</td>
                 <td> {drug.PublicPrice} SR</td>
               </tr>
             ))}

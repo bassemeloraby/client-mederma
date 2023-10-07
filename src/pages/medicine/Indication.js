@@ -64,8 +64,8 @@ function Indication() {
           <tr>
             <th>#</th>
             <th>INDICATION</th>
-            <th>ICD_10_CODE</th>
-            <th>PHARMACEUTICAL FORM</th>
+            <th>ICD 10 CODE</th>
+            <th>FORM</th>
           </tr>
         </thead>
         <tbody>
