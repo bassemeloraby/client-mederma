@@ -22,6 +22,7 @@ function App() {
           <Route path="/insurance" element={<Insurance />} />
         </Routes>
       </div>
+      
     </Fragment>
   );
 }
