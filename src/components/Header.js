@@ -10,6 +10,7 @@ import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
+import Contact from "./Contact";
 
 function Header() {
   const [show, setShow] = useState(false);
@@ -77,6 +78,7 @@ function Header() {
                   </NavDropdown>
                 ))}
               </Nav>
+              <Contact/>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
           {/* website name */}

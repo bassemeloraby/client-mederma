@@ -19,7 +19,7 @@ function Insurance() {
         ))}
       </Nav>
 
-      <span>TOTAL CARE MACHINE TEL:920014001</span>
+      <span className="border m-3 bg-info border-black">TOTAL CARE MACHINE TEL : 920014001</span>
       <div className="ratio ratio-16x9">
         <iframe
           src="https://www.youtube.com/embed/7wX3Pnjecqc"

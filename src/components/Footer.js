@@ -1,4 +1,6 @@
 import React from "react";
+import Contact from "./Contact";
+
 
 const Footer = () => (
   <nav className=" navbar  navbar-expand-lg bg-primary navbar-dark justify-content-center d-flex">
@@ -8,6 +10,7 @@ const Footer = () => (
         {" "}
         MDBootstrap.com
       </a>
+      <Contact/>
     </div>
   </nav>
 );
