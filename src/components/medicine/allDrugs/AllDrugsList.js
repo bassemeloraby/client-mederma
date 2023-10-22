@@ -1,15 +1,14 @@
 import React from "react";
 import { Virtuoso } from "react-virtuoso";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import GoogleLink from "../../GoogleLink";
 
-const l1 = "https://www.google.com/search?q=";
-const l2 =
-  "&sca_esv=571711580&rlz=1C1VDKB_enSA1075SA1075&tbm=isch&sxsrf=AM9HkKkhm2K1JYgiDZSvrn-lnYR52Xi5vA:1696763801819&source=lnms&sa=X&ved=2ahUKEwj18LLdqeaBAxXD2wIHHfNMAzMQ_AUoAXoECAQQAw&biw=1366&bih=641&dpr=1";
-function AllDrugsList({ items }) {
+function AllDrugsList({ items, setScientific }) {
   const navigate = useNavigate();
 
   const handelS = (s) => {
-    navigate(`/ScientificName/${s}`);
+    setScientific(s);
+    navigate(`/allD/scientificName`);
   };
   const handleIndication = (i) => {
     navigate(`/indication/${i}`);
@@ -33,39 +32,35 @@ function AllDrugsList({ items }) {
               borderRadius: "5px",
               margin: "5px 0",
             }}
+            className=""
           >
-            <h3>
-              {drug.TradeName} {drug.Strength} {drug.StrengthUnit}
-            </h3>
-            <h6>
-              {drug.ScientificName}{" "}
+            <div>
+              <h3>
+                {drug.TradeName} {drug.Strength} {drug.StrengthUnit}
+              </h3>
+              <h6>{drug.ScientificName} </h6>
+              <h6>{drug.PublicPrice} SR </h6>
+            </div>
+          {/* -----------------options ----------------*/}
+            <div className="d-flex bg-light rounded-2">
               <span
+              className="ms-2"
                 style={{ cursor: "pointer", color: "blue" }}
                 onClick={() => handelS(drug.ScientificName)}
               >
                 Alternative
               </span>
-            </h6>
-            <h6>
-              {drug.PublicPrice} SR{" "}
               <span
+              className="me-2 ms-2"
                 style={{ cursor: "pointer", color: "green" }}
                 onClick={() => handleIndication(drug.ScientificName)}
               >
                 Indication
               </span>{" "}
-              
-              <Link
-                to={
-                  l1 + drug.TradeName + drug.Strength + drug.StrengthUnit + l2
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "red" }}
-              >
-                Google Pic
-              </Link>
-            </h6>
+              <GoogleLink
+                name={drug.TradeName + drug.Strength + drug.StrengthUnit}
+              />
+            </div>
           </div>
         )}
       />{" "}

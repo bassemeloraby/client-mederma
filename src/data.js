@@ -1,8 +1,26 @@
+import { FcSearch, FcFilledFilter } from "react-icons/fc";
+
 export const mainPages = [
   {
     id: 1,
     text: "Medicine",
-    ping: [{ name: "search by trade name", link: "/allD" }],
+    ping: [{ name: "search", link: "/allD/allDugsSearch", icon: <FcSearch /> }],
+  },
+  {
+    id: 2,
+    text: "Cosmotics",
+    ping: [
+      {
+        name: "search",
+        link: "/cosmotics/cosmoticSearch",
+        icon: <FcSearch />,
+      },
+      {
+        name: "filter",
+        link: "/cosmotics/cosmoticFilter",
+        icon: <FcFilledFilter />,
+      },
+    ],
   },
   {
     id: 3,

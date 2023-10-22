@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
-import Spinner from "../../components/Spinner";
-
+import { Route, Routes } from "react-router-dom";
 import { mainUrl } from "../../data";
+
+import Spinner from "../../components/Spinner";
 import AllDrugsList from "../../components/medicine/allDrugs/AllDrugsList";
 import AllDugsSearch from "../../components/medicine/allDrugs/AllDugsSearch";
+import ScientificName from "../../components/medicine/allDrugs/ScientificName";
+// const url = "/api/allDrugs";
 const url = mainUrl + "allDrugs";
 
-function AllD() {
+const AllDrugs = () => {
   const [allDrugs, setAllDrugs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState();
+  const [scientific, setScientific] = useState();
 
   useEffect(() => {
     const fetchAllDrugs = async () => {
@@ -53,10 +57,21 @@ function AllD() {
       <div className="d-flex mb-2">
         <h2>All Drugs</h2>
       </div>
-      <AllDugsSearch setQuery={setQuery} />
-      <AllDrugsList items={items} />
+      <Routes>
+        <Route
+          path="allDugsSearch"
+          element={
+            <Fragment>
+              {" "}
+              <AllDugsSearch setQuery={setQuery} />
+              <AllDrugsList items={items} setScientific={setScientific}/>
+            </Fragment>
+          }
+        />
+        <Route path="scientificName" element={<ScientificName allDrugs={allDrugs} scientific={scientific}  />} />
+      </Routes>
     </div>
   );
-}
+};
 
-export default AllD;
+export default AllDrugs;
