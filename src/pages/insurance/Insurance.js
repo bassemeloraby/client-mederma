@@ -21,9 +21,21 @@ function Insurance() {
           </Nav.Item>
         ))}
       </Nav>
+<<<<<<< HEAD
       <section className="home-video">
         <YouTube videoId="7wX3Pnjecqc" />
       </section>
+=======
+          <span>TOTAL CARE MACHINE TEL:920014001</span>
+      <div className="ratio ratio-16x9">
+        <iframe
+          src="https://www.youtube.com/embed/7wX3Pnjecqc"
+          title="GlobeMed i care جلوبميد"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+>>>>>>> 2777b36fb8d52a8dc2577f6cc61a6ad781d4be2b
       <div className="d-flex justify-content-around flex-wrap">
         {" "}
         <img src={insc1} alt="insurance1" className=""></img>
