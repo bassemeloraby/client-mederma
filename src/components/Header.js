@@ -28,7 +28,7 @@ function Header() {
 
   return (
     <Fragment>
-      <Navbar collapseOnSelect expand="expand" bg="success" variant="dark">
+      <Navbar collapseOnSelect expand="expand" bg="primary" variant="dark">
         <Container>
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
@@ -91,7 +91,7 @@ function Header() {
           </Navbar.Brand>
           {/* login icon */}
           {user ? (
-            <div>
+            <div className="displayNone">
               <span className="me-2 border bg-warning p-2 rounded-1">
                 Hello Bassem
               </span>
@@ -101,7 +101,7 @@ function Header() {
               />
             </div>
           ) : (
-            <div>
+            <div className="displayNone">
               <span className="me-2 border bg-warning p-2 rounded-1">
                 Hello Guest
               </span>

@@ -39,7 +39,7 @@ function App() {
           <ToastContainer className="justify-content-md-center" />
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </Fragment>
   );
 }

@@ -1,14 +1,11 @@
 import React from "react";
-// import YouTube from "react-youtube";
 import Nav from "react-bootstrap/Nav";
-// import { Link } from "react-router-dom";
 import insc1 from "../../images/inscTel-1.png";
 import insc2 from "../../images/inscTel-2.png";
 import insc3 from "../../images/inscTel-3.png";
 import insc4 from "../../images/inscTel-4.png";
 import insc5 from "../../images/inscTel-5.png";
 import { insuranceLinks } from "../../data";
-// import Zoom from "react-zoom-image-hover";
 function Insurance() {
   return (
     <section className="">
@@ -39,9 +36,6 @@ function Insurance() {
         <img src={insc4} alt="insurance4"></img>
         <img src={insc5} alt="insurance5"></img>
       </div>
-      {/*<div>
-        <Zoom height={500} width={830} zoomScale={3} src={insc} />
-  </div>*/}
     </section>
   );
 }
