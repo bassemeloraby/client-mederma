@@ -21,7 +21,7 @@ function Home() {
             <img src={start1} alt="insurance2" className="border"></img>
           </div>
         </section>
-        <section> I am added new page for calculations ,go to it from Medicine </section>
+        <section> I have added new page for calculations ,go to it from Medicine </section>
       </section>
     </Fragment>
   );
