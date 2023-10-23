@@ -4,7 +4,10 @@ export const mainPages = [
   {
     id: 1,
     text: "Medicine",
-    ping: [{ name: "search", link: "/allD/allDugsSearch", icon: <FcSearch /> }],
+    ping: [
+      { name: "search", link: "/allD/allDugsSearch", icon: <FcSearch /> },
+      { name: "MedCalc", link: "/medCalc" },
+    ],
   },
   {
     id: 2,

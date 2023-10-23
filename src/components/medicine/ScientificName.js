@@ -5,8 +5,10 @@ import GoogleLink from "../GoogleLink";
 const ScientificName = ({ allDrugs, scientific }) => {
   return (
     <Fragment>
-      <div>ScientificName</div>
-      {scientific}
+      <div className="d-flex justify-content-center">
+        <h3>Scientific Name : {scientific}</h3> 
+      </div>
+
       <Table striped bordered hover>
         <thead>
           <tr>

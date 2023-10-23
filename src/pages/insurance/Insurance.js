@@ -9,6 +9,9 @@ import { insuranceLinks } from "../../data";
 function Insurance() {
   return (
     <section className="">
+      <div className="d-flex justify-content-center">
+        <h3>Insurance</h3>{" "}
+      </div>
       <Nav className="bg-light mb-2 ">
         {insuranceLinks.map((link, index) => (
           <Nav.Item key={index}>
@@ -19,8 +22,10 @@ function Insurance() {
         ))}
       </Nav>
 
-      <span className="border m-3 bg-info border-black">TOTAL CARE MACHINE TEL : 920014001</span>
-      <div className="ratio ratio-16x9">
+      <span className="border m-3 bg-info border-black">
+        TOTAL CARE MACHINE TEL : 920014001
+      </span>
+      <div className="ratio ratio-16x9 mt-3" style={{ width: "40rem" }}>
         <iframe
           src="https://www.youtube.com/embed/7wX3Pnjecqc"
           title="GlobeMed i care جلوبميد"

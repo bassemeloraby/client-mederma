@@ -3,7 +3,6 @@ import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-// import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
 
@@ -69,7 +68,7 @@ const Login = () => {
         </h1>
         <p>Login and start settings</p>
       </section>
-      <section className="form col-4">
+      <section className="form col-4 p-2 mb-2" style={{backgroundColor:"brown"}}>
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input

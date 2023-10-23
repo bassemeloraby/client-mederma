@@ -13,13 +13,14 @@ import IdleTimerContainer from "./components/IdleTimerContainer";
 import { useSelector } from "react-redux";
 import Footer from "./components/Footer";
 import NotFind from "./pages/NotFind";
+import MedCalc from "./pages/medicine/MedCalc";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
-  window.onbeforeunload = function() {
+  window.onbeforeunload = function () {
     localStorage.removeItem("user");
- }
- 
+  };
+
   return (
     <Fragment>
       <Header />
@@ -29,6 +30,8 @@ function App() {
           <Route path="/*" element={<NotFind />} />
           <Route path="/" element={<Home />} />
           <Route path="/allD/*" element={<AllDrugs />} />
+          <Route path="medCalc" element={<MedCalc />} />
+
           <Route path="/indication/:ScientificName" element={<Indication />} />
           <Route path="/cosmotics/*" element={<Cosmotics />} />
 
@@ -39,7 +42,7 @@ function App() {
           <ToastContainer className="justify-content-md-center" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 }
