@@ -1,7 +1,7 @@
 import React from "react";
 import { Virtuoso } from "react-virtuoso";
 import { useNavigate } from "react-router-dom";
-import GoogleLink from "../../GoogleLink";
+import GoogleLink from "../GoogleLink";
 
 function AllDrugsList({ items, setScientific }) {
   const navigate = useNavigate();

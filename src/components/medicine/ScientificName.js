@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Table from "react-bootstrap/Table";
-import GoogleLink from "../../GoogleLink";
+import GoogleLink from "../GoogleLink";
 
 const ScientificName = ({ allDrugs, scientific }) => {
   return (
@@ -27,7 +27,7 @@ const ScientificName = ({ allDrugs, scientific }) => {
                     {" "}
                     {drug.TradeName} {drug.Strength} {drug.StrengthUnit}
                   </div>
-                  <GoogleLink name={drug} />
+                  <GoogleLink name={drug.TradeName} />
                 </td>
                 <td> {drug.PharmaceuticalForm}</td>
                 <td> {drug.PublicPrice} SR</td>

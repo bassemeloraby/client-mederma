@@ -1,13 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
-import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import { mainUrl } from "../../data";
+import axios from "axios";
 
 import Spinner from "../../components/Spinner";
-import AllDrugsList from "../../components/medicine/allDrugs/AllDrugsList";
-import AllDugsSearch from "../../components/medicine/allDrugs/AllDugsSearch";
-import ScientificName from "../../components/medicine/allDrugs/ScientificName";
-// const url = "/api/allDrugs";
+import AllDrugsList from "../../components/medicine/AllDrugsList";
+import AllDugsSearch from "../../components/medicine/AllDugsSearch";
+import ScientificName from "../../components/medicine/ScientificName";
 const url = mainUrl + "allDrugs";
 
 const AllDrugs = () => {

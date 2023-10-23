@@ -1,15 +1,14 @@
 import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDb, CompanyDb, usedAreaDb } from "../../data/CosmoticData";
+import { mainUrl } from "../../data";
 import axios from "axios";
 import Spinner from "../Spinner";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import GoogleLink from "../GoogleLink";
-import { mainUrl } from "../../data";
 const url = mainUrl + "products";
 
-// const url = "/api/products";
 // -------------------------------CosmoticUpdate components---------------------------------//
 const CosmoticUpdate = ({
   setUpdatedPoduct,

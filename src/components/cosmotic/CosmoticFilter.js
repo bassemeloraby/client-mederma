@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useDb, usedAreaDb } from "../../data/CosmoticData";
+import { useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
 import GoogleLink from "../GoogleLink";
 // ----------------- cosmotic Filter component--------------//
 const CosmoticFilter = ({ cosmotics, user, setUpdateProduct }) => {
