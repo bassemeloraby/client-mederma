@@ -10,12 +10,7 @@ import GoogleLink from "../GoogleLink";
 const url = mainUrl + "products";
 
 // -------------------------------CosmoticUpdate components---------------------------------//
-const CosmoticUpdate = ({
-  setUpdatedPoduct,
-  user,
-  cosmotics,
-  updateProduct,
-}) => {
+const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
   // main constants
   const navigate = useNavigate();
   const { id } = useParams();
@@ -53,7 +48,6 @@ const CosmoticUpdate = ({
       });
 
       setLoading(false);
-      setUpdatedPoduct(res.data);
       console.log(res.data);
       const uu = cosmotics.find((comp) => comp._id === id);
       if (uu) {
