@@ -34,7 +34,7 @@ function Header() {
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
             onClick={toggleShow}
-            className="bg-dark"
+            className="bg-dark None"
           />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-lg`}

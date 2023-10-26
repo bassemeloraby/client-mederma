@@ -136,6 +136,14 @@ const CosmoticFilter = ({ cosmotics, user, setUpdateProduct }) => {
               <td className="d-flex justify-content-between">
                 <span>{prod.Description}</span>{" "}
                 <GoogleLink name={prod.Description} />
+                <Button
+                  variant="primary"
+                  onClick={() =>
+                    navigate(`/cosmotics/cosmoticCard/${prod._id}`)
+                  }
+                >
+                  Card
+                </Button>{" "}
               </td>
               <td>
                 {user && (

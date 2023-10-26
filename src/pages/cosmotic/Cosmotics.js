@@ -1,5 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { mainUrl } from "../../data";
 import axios from "axios";
 import Spinner from "../../components/Spinner";
 import CosmoticList from "../../components/cosmotic/CosmoticList";
@@ -7,8 +9,6 @@ import CosmoticSearch from "../../components/cosmotic/CosmoticSearch";
 import CosmoticUpdate from "../../components/cosmotic/CosmoticUpdate";
 import CosmoticCard from "../../components/cosmotic/CosmoticCard";
 import CosmoticFilter from "../../components/cosmotic/CosmoticFilter";
-import { useSelector } from "react-redux";
-import { mainUrl } from "../../data";
 
 // const url = "/api/products";
 const url = mainUrl + "products";
@@ -18,7 +18,7 @@ const Cosmotics = () => {
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState();
   const [updateProduct, setUpdateProduct] = useState();
-  const [updatedPoduct, setUpdatedPoduct] = useState();
+  
 
   const { user } = useSelector((state) => state.auth);
 
@@ -88,7 +88,6 @@ const Cosmotics = () => {
           element={
             <CosmoticUpdate
               updateProduct={updateProduct}
-              setUpdatedPoduct={setUpdatedPoduct}
               user={user}
               cosmotics={cosmotics}
             />
@@ -97,8 +96,8 @@ const Cosmotics = () => {
         {/*-----------------cosmoticCard-----------------*/}
 
         <Route
-          path="cosmoticCard"
-          element={<CosmoticCard updatedPoduct={updatedPoduct} />}
+          path="cosmoticCard/:id"
+          element={<CosmoticCard  cosmotics={cosmotics}/>}
         />
         {/*-----------------cosmoticFilter-----------------*/}
 

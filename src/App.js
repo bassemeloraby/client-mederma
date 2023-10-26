@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import Footer from "./components/Footer";
 import NotFind from "./pages/NotFind";
 import MedCalc from "./pages/medicine/MedCalc";
+import MainNav from "./components/MainNav";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -24,8 +25,9 @@ function App() {
   return (
     <Fragment>
       <Header />
-      {user && <IdleTimerContainer></IdleTimerContainer>}
       <div className="container">
+      <MainNav/>
+      {user && <IdleTimerContainer></IdleTimerContainer>}
         <Routes>
           <Route path="/*" element={<NotFind />} />
           <Route path="/" element={<Home />} />

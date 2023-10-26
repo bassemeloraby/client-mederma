@@ -1,26 +1,24 @@
 import React, { Fragment, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import GoogleLink from "../GoogleLink";
 import Spinner from "../Spinner";
 
-
-const CosmoticCard = ({ updatedPoduct }) => {
+const CosmoticCard = ({ cosmotics }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const { id } = useParams();
 
   const search = () => {
     setLoading(true);
     navigate(`/cosmotics/cosmoticSearch`);
-    // window.location.reload();
     setLoading(false);
   };
   const filter = () => {
     setLoading(true);
     navigate(`/cosmotics/cosmoticFilter`);
-    window.location.reload();
     setLoading(false);
   };
 
@@ -40,25 +38,29 @@ const CosmoticCard = ({ updatedPoduct }) => {
         </Button>{" "}
       </div>
 
-      <Card style={{ width: "30rem" }}>
-        <Card.Body>
-          <Card.Title>{updatedPoduct.Description}</Card.Title>
-        </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>Company: {updatedPoduct.Company}</ListGroup.Item>
-          <ListGroup.Item>
-            Use: {updatedPoduct.use1}
-            {updatedPoduct.use2 && "and"}
-            {updatedPoduct.use2}
-          </ListGroup.Item>
-          <ListGroup.Item>
-            Used Area: {updatedPoduct.usedArea1},{updatedPoduct.usedArea2}
-          </ListGroup.Item>
-          <ListGroup.Item>
-            <GoogleLink name={updatedPoduct.Description}/>
-          </ListGroup.Item>
-        </ListGroup>
-      </Card>
+      {cosmotics
+        .filter((c) => c._id === id)
+        .map((c, i) => (
+          <Card key={i} style={{ width: "30rem" }}>
+            <Card.Body>
+              <Card.Title>{c.Description}</Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroup.Item>Company: {c.Company}</ListGroup.Item>
+              <ListGroup.Item>
+                Use: {c.use1}
+                {c.use2 && "and"}
+                {c.use2}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                Used Area: {c.usedArea1},{c.usedArea2}
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <GoogleLink name={c.Description} />
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+        ))}
     </Fragment>
   );
 };

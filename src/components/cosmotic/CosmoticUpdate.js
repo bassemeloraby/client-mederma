@@ -62,7 +62,7 @@ const CosmoticUpdate = ({
         uu.usedArea1 = usedArea1;
         uu.usedArea2 = usedArea2;
       }
-      navigate(`/cosmotics/cosmoticCard`);
+      navigate(`/cosmotics/cosmoticCard/${id}`);
     } catch (error) {
       setLoading(false);
       console.log(error);
