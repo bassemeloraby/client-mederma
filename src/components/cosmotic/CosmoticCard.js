@@ -47,14 +47,35 @@ const CosmoticCard = ({ cosmotics }) => {
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroup.Item>Company: {c.Company}</ListGroup.Item>
+              <ListGroup.Item>Form: {c.form}</ListGroup.Item>
+              <ListGroup.Item>
+                Company Category: {c.companyCategory1}
+                {c.companyCategory2 && "and"}
+                {c.companyCategory2}
+              </ListGroup.Item>
               <ListGroup.Item>
                 Use: {c.use1}
-                {c.use2 && "and"}
+                {c.use2 && " and "}
                 {c.use2}
               </ListGroup.Item>
               <ListGroup.Item>
-                Used Area: {c.usedArea1},{c.usedArea2}
+                Used Area: {c.usedArea1}
+                {c.usedArea2 && " and "}
+                {c.usedArea2}
               </ListGroup.Item>
+              <ListGroup.Item>
+                Skin Kind: {c.skinSenstivety}
+                {c.normalSkin && " and "}
+                {c.normalSkin}
+                {c.drySkin && " and "}
+                {c.drySkin}
+                {c.oilySkin && " and "}
+                {c.oilySkin}
+                {c.combinationSkin && " and "}
+                {c.combinationSkin}
+              </ListGroup.Item>
+              <ListGroup.Item>Price: {c.price}</ListGroup.Item>
+              <ListGroup.Item>Pic Link: {c.picLink}</ListGroup.Item>
               <ListGroup.Item>
                 <GoogleLink name={c.Description} />
               </ListGroup.Item>

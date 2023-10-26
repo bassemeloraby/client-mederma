@@ -41,8 +41,16 @@ const CosmoticList = ({ items, user, setUpdateProduct }) => {
               </h6>
             </div>
             <div className="d-flex">
-              <div className="me-2">
+              <div className="me-2 row">
                 <GoogleLink name={prod.Description} />
+                <Button
+                  variant="primary"
+                  onClick={() =>
+                    navigate(`/cosmotics/cosmoticCard/${prod._id}`)
+                  }
+                >
+                  Card
+                </Button>{" "}
               </div>
 
               {user && (
