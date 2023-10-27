@@ -145,276 +145,297 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
       <form
         onSubmit={onSubmit}
         style={{ backgroundColor: "brown" }}
-        className="p-2 text-light mb-2 col-4"
+        className="p-2 text-light mb-2"
       >
-        {/*---------start updateProduct Description---------*/}
-        <Form.Group className="mb-3">
-          <Form.Label>Description</Form.Label>
-          <Form.Control placeholder={Description} disabled />
-        </Form.Group>
-        <GoogleLink color="white" name={Description} />
-        {/*---------end updateProduct Description---------*/}
-        {/*---------start updateProduct img---------*/}
-        <img src={picLink} alt="insurance2"></img>
+        <div className="12 d-flex justify-content-around">
+          <section className="1">
+            {" "}
+            {/*---------start updateProduct Description---------*/}
+            <Form.Group className=" jus">
+              <Form.Label>Description</Form.Label>
+              <Form.Control placeholder={Description} disabled />
+              <GoogleLink color="white" name={Description} />
+              {/*---------end updateProduct Description---------*/}
+              {/*---------start updateProduct img---------*/}
+              <img src={picLink} alt="insurance2" className=""></img>
+              {/*---------end updateProduct img---------*/}
+            </Form.Group>
+          </section>
+          <section className="2">
+            {" "}
+            {/*---------start updateProduct Company---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <Form.Group className="me-2">
+                <Form.Control placeholder={Company} disabled />
+              </Form.Group>
+              <Form.Select
+                aria-label="Default select example"
+                onChange={onChange}
+                name="Company"
+              >
+                <option>Company</option>
+                {CompanyDb.sort((a, b) => (a.name < b.name ? -1 : 1)).map(
+                  (c, i) => (
+                    <option key={i} value={c.name}>
+                      {c.name}
+                    </option>
+                  )
+                )}
+              </Form.Select>
+            </div>
+            {/*---------end updateProduct Company---------*/}
+            {/*---------start updateProduct form---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <Form.Group className="me-2">
+                <Form.Control placeholder={form} disabled />
+              </Form.Group>
+              <Form.Select
+                aria-label="Default select example"
+                onChange={onChange}
+                name="form"
+              >
+                <option>form</option>
+                {formDb
+                  .sort((a, b) => (a.name < b.name ? -1 : 1))
+                  .map((c, i) => (
+                    <option key={i} value={c.name}>
+                      {c.name}
+                    </option>
+                  ))}
+              </Form.Select>
+            </div>
+            {/*---------end updateProduct form---------*/}
+            {/*---------start updateProduct company Category---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <section className="12-1 me-2">
+                {" "}
+                <Form.Group className="mb-2">
+                  <Form.Label>company Category1</Form.Label>
+                  <Form.Control placeholder={companyCategory1} disabled />
+                </Form.Group>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="companyCategory1"
+                >
+                  <option>companyCategory1</option>
+                  {formDb
+                    .sort((a, b) => (a.name < b.name ? -1 : 1))
+                    .map((c, i) => (
+                      <option key={i} value={c.name}>
+                        {c.name}
+                      </option>
+                    ))}
+                </Form.Select>
+              </section>
+              <section className="12-2">
+                <Form.Group className="mb-2">
+                  <Form.Label>company Category2</Form.Label>
+                  <Form.Control placeholder={companyCategory2} disabled />
+                </Form.Group>
 
-        {/*---------end updateProduct img---------*/}
-        {/*---------start updateProduct Company---------*/}
-        <div className="bg-success p-2 mb-2 rounded-2">
-          <Form.Group className="mb-2">
-            <Form.Label>Company</Form.Label>
-            <Form.Control placeholder={Company} disabled />
-          </Form.Group>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="Company"
-          >
-            <option>Company</option>
-            {CompanyDb.sort((a, b) => (a.name < b.name ? -1 : 1)).map(
-              (c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              )
-            )}
-          </Form.Select>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="companyCategory2"
+                >
+                  <option>companyCategory2</option>
+                  <option value="">no category</option>
+                  {companyCategoryDb
+                    .sort((a, b) => (a.name < b.name ? -1 : 1))
+                    .map((c, i) => (
+                      <option key={i} value={c.name}>
+                        {c.name}
+                      </option>
+                    ))}
+                </Form.Select>
+              </section>
+            </div>
+            {/*---------end updateProduct company Category---------*/}
+            {/*---------start updateProduct  use---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <section className="13-1 me-2">
+                {" "}
+                <Form.Group className="mb-2">
+                  <Form.Label>use1</Form.Label>
+                  <Form.Control placeholder={use1} disabled />
+                </Form.Group>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="use1"
+                >
+                  <option>use1</option>
+                  {useDb
+                    .sort((a, b) => (a.name < b.name ? -1 : 1))
+                    .map((c, i) => (
+                      <option key={i} value={c.name}>
+                        {c.name}
+                      </option>
+                    ))}
+                </Form.Select>
+              </section>
+              <section className="13-2 ">
+                <Form.Group className="mb-2">
+                  <Form.Label>use2</Form.Label>
+                  <Form.Control placeholder={use2} disabled />
+                </Form.Group>
+
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="use2"
+                >
+                  <option>use2</option>
+                  <option value="">no use</option>
+                  {useDb
+                    .sort((a, b) => (a.name < b.name ? -1 : 1))
+                    .map((c, i) => (
+                      <option key={i} value={c.name}>
+                        {c.name}
+                      </option>
+                    ))}
+                </Form.Select>
+              </section>
+            </div>
+            {/*---------end updateProduct  use---------*/}
+            {/*---------start updateProduct  used Area---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <section className="14-1 me-2">
+                {" "}
+                <Form.Group className="mb-2">
+                  <Form.Label>usedArea1</Form.Label>
+                  <Form.Control placeholder={usedArea1} disabled />
+                </Form.Group>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="usedArea1"
+                >
+                  <option>usedArea1</option>
+                  {usedAreaDb
+                    .sort((a, b) => (a.name < b.name ? -1 : 1))
+                    .map((c, i) => (
+                      <option key={i} value={c.name}>
+                        {c.name}
+                      </option>
+                    ))}
+                </Form.Select>
+              </section>
+              <section className="14-2">
+                {" "}
+                <Form.Group className="mb-2">
+                  <Form.Label>usedArea2</Form.Label>
+                  <Form.Control placeholder={usedArea2} disabled />
+                </Form.Group>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="usedArea2"
+                >
+                  <option>usedArea2</option>
+                  <option value="">no use</option>
+                  {usedAreaDb
+                    .sort((a, b) => (a.name < b.name ? -1 : 1))
+                    .map((c, i) => (
+                      <option key={i} value={c.name}>
+                        {c.name}
+                      </option>
+                    ))}
+                </Form.Select>
+              </section>
+            </div>
+            {/*---------end updateProduct  used Area---------*/}
+            {/*---------start updateProduct  skin kind---------*/}
+            <div className="bg-warning p-2 mb-2 rounded-2 d-flex">
+              {" "}
+              <section className="15-1 me-2">
+                {" "}
+                <Form.Group className="mb-2">
+                  <Form.Control placeholder={skinSenstivety} disabled />
+                  <Form.Control placeholder={normalSkin} disabled />
+                  <Form.Control placeholder={drySkin} disabled />
+                  <Form.Control placeholder={oilySkin} disabled />
+                  <Form.Control placeholder={combinationSkin} disabled />
+                </Form.Group>
+              </section>
+              <section className="15-2 ">
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="skinSenstivety"
+                >
+                  <option value="">no skin Senstivety</option>
+                  <option value="Senstive">Senstive</option>
+                </Form.Select>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="normalSkin"
+                >
+                  <option value="">no normal Skin</option>
+                  <option value="Normal">Normal</option>
+                </Form.Select>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="drySkin"
+                >
+                  <option value="">no dry Skin</option>
+                  <option value="Dry">Dry</option>
+                </Form.Select>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="oilySkin"
+                >
+                  <option value="">no oily Skin</option>
+                  <option value="Oily">Oily</option>
+                </Form.Select>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="combinationSkin"
+                >
+                  <option value="">no combination Skin</option>
+                  <option value="Combination">Combination</option>
+                </Form.Select>
+              </section>
+            </div>
+            {/*---------end updateProduct  skin kind---------*/}
+            {/*---------start updateProduct  price---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <Form.Group className="me-2">
+                <Form.Label>Price</Form.Label>
+                <Form.Control placeholder={price + " SR "} disabled />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label>Price</Form.Label>
+                <Form.Control onChange={onChange} name="price" />
+              </Form.Group>
+            </div>
+            {/*---------end updateProduct  price---------*/}
+            {/*---------start updateProduct  pic Link---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <Form.Group className="me-2">
+                <Form.Label>Pic Link</Form.Label>
+                <Form.Control placeholder={picLink} disabled />
+              </Form.Group>
+              <Form.Group className="mb-2">
+                <Form.Label>picLink</Form.Label>
+                <Form.Control onChange={onChange} name="picLink" />
+              </Form.Group>
+            </div>
+            {/*---------end updateProduct  pic Link---------*/}
+          </section>
         </div>
 
-        {/*---------end updateProduct Company---------*/}
-
-        {/*---------start updateProduct form---------*/}
-        <div className="bg-success p-2 mb-2 rounded-2">
-          <Form.Group className="mb-2">
-            <Form.Label>Form</Form.Label>
-            <Form.Control placeholder={form} disabled />
-          </Form.Group>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="form"
-          >
-            <option>form</option>
-            {formDb
-              .sort((a, b) => (a.name < b.name ? -1 : 1))
-              .map((c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              ))}
-          </Form.Select>
-        </div>
-
-        {/*---------end updateProduct form---------*/}
-        {/*---------start updateProduct company Category---------*/}
-        <div className="bg-success p-2 mb-2 rounded-2">
-          <Form.Group className="mb-2">
-            <Form.Label>company Category1</Form.Label>
-            <Form.Control placeholder={companyCategory1} disabled />
-          </Form.Group>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="companyCategory1"
-          >
-            <option>companyCategory1</option>
-            {formDb
-              .sort((a, b) => (a.name < b.name ? -1 : 1))
-              .map((c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              ))}
-          </Form.Select>
-          <Form.Group className="mb-2">
-            <Form.Label>company Category2</Form.Label>
-            <Form.Control placeholder={companyCategory2} disabled />
-          </Form.Group>
-
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="companyCategory2"
-          >
-            <option>companyCategory2</option>
-            <option value="">no category</option>
-            {companyCategoryDb
-              .sort((a, b) => (a.name < b.name ? -1 : 1))
-              .map((c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              ))}
-          </Form.Select>
-        </div>
-
-        {/*---------end updateProduct company Category---------*/}
-        {/*---------start updateProduct  use---------*/}
-        <div className="bg-success p-2 mb-2 rounded-2">
-          <Form.Group className="mb-2">
-            <Form.Label>use1</Form.Label>
-            <Form.Control placeholder={use1} disabled />
-          </Form.Group>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="use1"
-          >
-            <option>use1</option>
-            {useDb
-              .sort((a, b) => (a.name < b.name ? -1 : 1))
-              .map((c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              ))}
-          </Form.Select>
-          <Form.Group className="mb-2">
-            <Form.Label>use2</Form.Label>
-            <Form.Control placeholder={use2} disabled />
-          </Form.Group>
-
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="use2"
-          >
-            <option>use2</option>
-            <option value="">no use</option>
-            {useDb
-              .sort((a, b) => (a.name < b.name ? -1 : 1))
-              .map((c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              ))}
-          </Form.Select>
-        </div>
-
-        {/*---------end updateProduct  use---------*/}
-        {/*---------start updateProduct  used Area---------*/}
-        <div className="bg-success p-2 mb-2 rounded-2">
-          <Form.Group className="mb-2">
-            <Form.Label>usedArea1</Form.Label>
-            <Form.Control placeholder={usedArea1} disabled />
-          </Form.Group>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="usedArea1"
-          >
-            <option>usedArea1</option>
-            {usedAreaDb
-              .sort((a, b) => (a.name < b.name ? -1 : 1))
-              .map((c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              ))}
-          </Form.Select>
-          <Form.Group className="mb-2">
-            <Form.Label>usedArea2</Form.Label>
-            <Form.Control placeholder={usedArea2} disabled />
-          </Form.Group>
-
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="usedArea2"
-          >
-            <option>usedArea2</option>
-            <option value="">no use</option>
-            {usedAreaDb
-              .sort((a, b) => (a.name < b.name ? -1 : 1))
-              .map((c, i) => (
-                <option key={i} value={c.name}>
-                  {c.name}
-                </option>
-              ))}
-          </Form.Select>
-        </div>
-
-        {/*---------end updateProduct  used Area---------*/}
-        {/*---------start updateProduct  skin kind---------*/}
-        <div className="bg-warning p-2 mb-2 rounded-2">
-          {" "}
-          <Form.Group className="mb-2">
-            <Form.Label>Skin Kind</Form.Label>
-            <Form.Control placeholder={skinSenstivety} disabled />
-            <Form.Control placeholder={normalSkin} disabled />
-            <Form.Control placeholder={drySkin} disabled />
-            <Form.Control placeholder={oilySkin} disabled />
-            <Form.Control placeholder={combinationSkin} disabled />
-          </Form.Group>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="skinSenstivety"
-          >
-            <option value="">no skin Senstivety</option>
-            <option value="Senstive">Senstive</option>
-          </Form.Select>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="normalSkin"
-          >
-            <option value="">no normal Skin</option>
-            <option value="Normal">Normal</option>
-          </Form.Select>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="drySkin"
-          >
-            <option value="">no dry Skin</option>
-            <option value="Dry">Dry</option>
-          </Form.Select>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="oilySkin"
-          >
-            <option value="">no oily Skin</option>
-            <option value="Oily">Oily</option>
-          </Form.Select>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={onChange}
-            name="combinationSkin"
-          >
-            <option value="">no combination Skin</option>
-            <option value="Combination">Combination</option>
-          </Form.Select>
-        </div>
-        {/*---------end updateProduct  skin kind---------*/}
-        {/*---------start updateProduct  price---------*/}
-        <div className="bg-success p-2 mb-2 rounded-2">
-          <Form.Group className="mb-2">
-            <Form.Label>Price</Form.Label>
-            <Form.Control placeholder={price + ' SR '} disabled />
-          </Form.Group>
-          <Form.Group className="mb-2">
-            <Form.Label>Price</Form.Label>
-            <Form.Control onChange={onChange} name="price" />
-          </Form.Group>
-
-        </div>
-        {/*---------end updateProduct  price---------*/}
-        {/*---------start updateProduct  pic Link---------*/}
-        <div className="bg-success p-2 mb-2 rounded-2">
-          <Form.Group className="mb-2">
-            <Form.Label>Pic Link</Form.Label>
-            <Form.Control placeholder={picLink} disabled />
-          </Form.Group>
-          <Form.Group className="mb-2">
-            <Form.Label>picLink</Form.Label>
-            <Form.Control onChange={onChange} name="picLink" />
-          </Form.Group>
-
-        </div>
-        {/*---------end updateProduct  pic Link---------*/}
         {/*---------end updateProduct Allform---------*/}
-        <Button variant="primary" type="submit">
+        <Button
+          variant="primary"
+          type="submit"
+          style={{ width: "-webkit-fill-available" }}
+        >
           Submit
         </Button>
       </form>
