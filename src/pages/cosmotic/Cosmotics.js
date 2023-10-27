@@ -97,7 +97,7 @@ const Cosmotics = () => {
 
         <Route
           path="cosmoticCard/:id"
-          element={<CosmoticCard  cosmotics={cosmotics}/>}
+          element={<CosmoticCard  cosmotics={cosmotics} setUpdateProduct={setUpdateProduct} user={user}/>}
         />
         {/*-----------------cosmoticFilter-----------------*/}
 

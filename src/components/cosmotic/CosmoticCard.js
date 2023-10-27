@@ -6,7 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import GoogleLink from "../GoogleLink";
 import Spinner from "../Spinner";
 
-const CosmoticCard = ({ cosmotics }) => {
+const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
@@ -20,6 +20,12 @@ const CosmoticCard = ({ cosmotics }) => {
     setLoading(true);
     navigate(`/cosmotics/cosmoticFilter`);
     setLoading(false);
+  };
+
+  const editHandler = (prod) => {
+    setUpdateProduct(prod);
+    navigate(`/cosmotics/cosmoticUpdate/${prod._id}`);
+    console.log(prod._id);
   };
 
   if (loading) {
@@ -86,6 +92,13 @@ const CosmoticCard = ({ cosmotics }) => {
                 <GoogleLink name={c.Description} />
               </ListGroup.Item>
             </ListGroup>
+            {user && (
+              <div>
+                <Button variant="success" onClick={() => editHandler(c)}>
+                  Edit
+                </Button>{" "}
+              </div>
+            )}
           </Card>
         ))}
     </Fragment>
