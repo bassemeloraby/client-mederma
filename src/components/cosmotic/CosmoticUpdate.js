@@ -157,7 +157,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               <GoogleLink color="white" name={Description} />
               {/*---------end updateProduct Description---------*/}
               {/*---------start updateProduct img---------*/}
-              <img src={picLink} alt="insurance2" className=""></img>
+              {picLink && (
+                <img src={picLink} alt="insurance2" className=""></img>
+              )}
               {/*---------end updateProduct img---------*/}
             </Form.Group>
           </section>
