@@ -32,6 +32,7 @@ export const mainPages = [
   },
 ];
 
+
 export const mainUrl = "https://rich-blue-llama-vest.cyclic.cloud/api/";
 
 export const insuranceLinks = [

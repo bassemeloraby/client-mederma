@@ -42,6 +42,11 @@ const CosmoticCard = ({ cosmotics }) => {
         .filter((c) => c._id === id)
         .map((c, i) => (
           <Card key={i} style={{ width: "30rem" }}>
+            <Card.Img
+              variant="top"
+              src={c.picLink}
+              style={{ width: "fit-content" }}
+            />
             <Card.Body>
               <Card.Title>{c.Description}</Card.Title>
             </Card.Body>
@@ -50,7 +55,7 @@ const CosmoticCard = ({ cosmotics }) => {
               <ListGroup.Item>Form: {c.form}</ListGroup.Item>
               <ListGroup.Item>
                 Company Category: {c.companyCategory1}
-                {c.companyCategory2 && "and"}
+                {c.companyCategory2 && " and "}
                 {c.companyCategory2}
               </ListGroup.Item>
               <ListGroup.Item>
@@ -65,6 +70,7 @@ const CosmoticCard = ({ cosmotics }) => {
               </ListGroup.Item>
               <ListGroup.Item>
                 Skin Kind: {c.skinSenstivety}
+                {!c.skinSenstivety && "None Senstive"}
                 {c.normalSkin && " and "}
                 {c.normalSkin}
                 {c.drySkin && " and "}
@@ -74,8 +80,8 @@ const CosmoticCard = ({ cosmotics }) => {
                 {c.combinationSkin && " and "}
                 {c.combinationSkin}
               </ListGroup.Item>
-              <ListGroup.Item>Price: {c.price}</ListGroup.Item>
-              <ListGroup.Item>Pic Link: {c.picLink}</ListGroup.Item>
+              <ListGroup.Item>Price: {c.price} SR</ListGroup.Item>
+
               <ListGroup.Item>
                 <GoogleLink name={c.Description} />
               </ListGroup.Item>

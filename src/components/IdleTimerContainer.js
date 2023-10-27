@@ -28,7 +28,7 @@ const IdleTimerContainer = () => {
     crossTab: true,
     ref: idleTimerRef,
     //for 10 minutes
-    timeout: 10 * 60 * 1000,
+    timeout: 100 * 60 * 1000,
     // timeout: 5 * 1000,
     onIdle: onIdle,
   });
