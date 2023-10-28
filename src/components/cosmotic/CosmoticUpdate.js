@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import {
   useDb,
@@ -13,7 +13,9 @@ import Spinner from "../Spinner";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import GoogleLink from "../GoogleLink";
-import Zoom from "react-zoom-image-hover";
+import ReactImageMagnify from 'react-image-magnify';
+
+// import Zoom from "react-zoom-image-hover";
 
 const url = mainUrl + "products";
 
@@ -169,14 +171,24 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               <GoogleLink color="white" name={Description} />
               {/*---------end updateProduct Description---------*/}
               {/*---------start updateProduct img---------*/}
-              {/* {picLink && (
-                <img src={picLink} alt="insurance2" className=""></img>
-              )}*/}
               {picLink && (
-                <div className="d-flex justify-content-center">
-                  <Zoom height={600} width={300} zoomScale={3} src={picLink} />
+                <div className="col-6">
+                <ReactImageMagnify {...{
+                  smallImage: {
+                      alt: 'Wristwatch by Ted Baker London',
+                      isFluidWidth: false,
+                      src: `${picLink}`
+                  },
+                  largeImage: {
+                      src:`${picLink}`,
+                      width: 600,
+                      height: 900
+                  }
+              }} />
+                  {" "}
                 </div>
               )}
+
               {/*---------end updateProduct img---------*/}
             </Form.Group>
           </section>
@@ -201,7 +213,6 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   )
                 )}
               </Form.Select>
-              
             </div>
             {/*---------end updateProduct Company---------*/}
             {/*---------start updateProduct form---------*/}

@@ -5,7 +5,6 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import GoogleLink from "../GoogleLink";
 import Spinner from "../Spinner";
-import Zoom from "react-zoom-image-hover";
 
 const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
   const navigate = useNavigate();
@@ -54,14 +53,7 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                 <Card.Title>{c.Description}</Card.Title>
               </div>
               {c.picLink && (
-                <div className="d-flex justify-content-center">
-                  <Zoom
-                    height={600}
-                    width={300}
-                    zoomScale={3}
-                    src={c.picLink}
-                  />
-                </div>
+                <img src={c.picLink} alt="insurance2" className=""></img>
               )}
             </div>
             <div className="12 col-6 ">

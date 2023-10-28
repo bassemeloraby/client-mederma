@@ -205,6 +205,7 @@ export const skinKindDb = [
   {
     id: 1,
     text: "skinSenstivety",
+    ping:[{name:"no skin Senstivety"},{type:'Senstive'}]
   },
   {
     id: 2,
