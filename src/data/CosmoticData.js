@@ -133,16 +133,24 @@ export const formDb = [
     name: "solution",
   },
   {
-    id: 4,
+    id: 5,
     name: "soap",
   },
   {
-    id: 4,
+    id: 6,
     name: "balm",
   },
   {
-    id: 4,
+    id: 7,
     name: "gel",
+  },
+  {
+    id: 8,
+    name: "lip stick",
+  },
+  {
+    id: 9,
+    name: "lotion",
   },
 ];
 export const usedAreaDb = [

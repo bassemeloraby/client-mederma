@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import {
   useDb,
@@ -13,6 +13,8 @@ import Spinner from "../Spinner";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import GoogleLink from "../GoogleLink";
+import Zoom from "react-zoom-image-hover";
+
 const url = mainUrl + "products";
 
 // -------------------------------CosmoticUpdate components---------------------------------//
@@ -140,25 +142,40 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         <Button variant="success" onClick={() => cancelHandler()}>
           Cancel
         </Button>{" "}
+        <Button
+          variant="primary"
+          onClick={() => navigate(`/cosmotics/cosmoticCard/${id}`)}
+        >
+          Card
+        </Button>{" "}
       </div>
       {/*-----------------start update Allform-----------------*/}
       <form
         onSubmit={onSubmit}
         style={{ backgroundColor: "brown" }}
-        className="p-2 text-light mb-2"
+        className="p-2 text-light mb-2 rounded-2"
       >
         <div className="12 d-flex justify-content-around">
-          <section className="1">
+          <section className="1 col-6">
             {" "}
             {/*---------start updateProduct Description---------*/}
-            <Form.Group className=" jus">
+            <Form.Group className="text-center">
               <Form.Label>Description</Form.Label>
-              <Form.Control placeholder={Description} disabled />
+              <Form.Control
+                placeholder={Description}
+                disabled
+                className="mb-2"
+              />
               <GoogleLink color="white" name={Description} />
               {/*---------end updateProduct Description---------*/}
               {/*---------start updateProduct img---------*/}
-              {picLink && (
+              {/* {picLink && (
                 <img src={picLink} alt="insurance2" className=""></img>
+              )}*/}
+              {picLink && (
+                <div className="d-flex justify-content-center">
+                  <Zoom height={600} width={300} zoomScale={3} src={picLink} />
+                </div>
               )}
               {/*---------end updateProduct img---------*/}
             </Form.Group>
@@ -184,6 +201,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   )
                 )}
               </Form.Select>
+              
             </div>
             {/*---------end updateProduct Company---------*/}
             {/*---------start updateProduct form---------*/}
