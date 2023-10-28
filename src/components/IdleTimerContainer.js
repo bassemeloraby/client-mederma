@@ -63,16 +63,7 @@ const IdleTimerContainer = () => {
     },
   };
 
-  // useEffect(() => {
-  //   if (modalIsOpen) {
-  //     const interval = setInterval(() => {
-  //       setTimer((prev) => prev - 1);
-  //       console.log("This will be called every 1 second");
-  //     }, 1000);
-  //     setTimer(10);
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [modalIsOpen]);
+  
 
   return (
     <Fragment>
@@ -88,7 +79,6 @@ const IdleTimerContainer = () => {
             keep me sign in
           </Button>{" "}
         </div>
-        {/*timer*/}
       </Modal>
       <div idletimer={idletimer}></div>;
     </Fragment>
