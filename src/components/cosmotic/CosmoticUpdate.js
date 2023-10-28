@@ -13,9 +13,6 @@ import Spinner from "../Spinner";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import GoogleLink from "../GoogleLink";
-import ReactImageMagnify from 'react-image-magnify';
-
-// import Zoom from "react-zoom-image-hover";
 
 const url = mainUrl + "products";
 
@@ -171,24 +168,10 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               <GoogleLink color="white" name={Description} />
               {/*---------end updateProduct Description---------*/}
               {/*---------start updateProduct img---------*/}
-              {picLink && (
-                <div className="col-6">
-                <ReactImageMagnify {...{
-                  smallImage: {
-                      alt: 'Wristwatch by Ted Baker London',
-                      isFluidWidth: false,
-                      src: `${picLink}`
-                  },
-                  largeImage: {
-                      src:`${picLink}`,
-                      width: 600,
-                      height: 900
-                  }
-              }} />
-                  {" "}
-                </div>
+               {picLink && (
+                <img src={picLink} alt="insurance2" className=""></img>
               )}
-
+             
               {/*---------end updateProduct img---------*/}
             </Form.Group>
           </section>
@@ -213,6 +196,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   )
                 )}
               </Form.Select>
+            
             </div>
             {/*---------end updateProduct Company---------*/}
             {/*---------start updateProduct form---------*/}
