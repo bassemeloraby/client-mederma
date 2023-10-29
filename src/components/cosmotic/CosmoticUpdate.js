@@ -39,6 +39,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     oilySkin: updateProduct.oilySkin,
     combinationSkin: updateProduct.combinationSkin,
     atopicSkin: updateProduct.atopicSkin,
+    aknePoreSkin: updateProduct.aknePoreSkin,
+    hyperpigmentedSkin: updateProduct.hyperpigmentedSkin,
+    flushedSkin: updateProduct.flushedSkin,
     price: updateProduct.price,
     picLink: updateProduct.picLink,
   });
@@ -49,7 +52,6 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     form,
     companyCategory1,
     companyCategory2,
-
     use1,
     use2,
     usedArea1,
@@ -60,6 +62,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     oilySkin,
     combinationSkin,
     atopicSkin,
+    aknePoreSkin,
+    hyperpigmentedSkin,
+    flushedSkin,
     price,
     picLink,
   } = formData;
@@ -95,6 +100,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         oilySkin: oilySkin,
         combinationSkin: combinationSkin,
         atopicSkin: atopicSkin,
+        aknePoreSkin: aknePoreSkin,
+        hyperpigmentedSkin: hyperpigmentedSkin,
+        flushedSkin: flushedSkin,
         price: price,
         picLink: picLink,
       });
@@ -117,6 +125,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         uu.oilySkin = oilySkin;
         uu.combinationSkin = combinationSkin;
         uu.atopicSkin = atopicSkin;
+        uu.aknePoreSkin = aknePoreSkin;
+        uu.hyperpigmentedSkin = hyperpigmentedSkin;
+        uu.flushedSkin = flushedSkin;
         uu.price = price;
         uu.picLink = picLink;
       }
@@ -377,6 +388,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   <Form.Control placeholder={oilySkin} disabled />
                   <Form.Control placeholder={combinationSkin} disabled />
                   <Form.Control placeholder={atopicSkin} disabled />
+                  <Form.Control placeholder={aknePoreSkin} disabled />
+                  <Form.Control placeholder={hyperpigmentedSkin} disabled />
+                  <Form.Control placeholder={flushedSkin} disabled />
                 </Form.Group>
               </section>
               <section className="15-2 ">

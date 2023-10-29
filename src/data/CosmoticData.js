@@ -205,55 +205,61 @@ export const skinKindDb = [
   {
     id: 1,
     name: "skinSenstivety",
-    option1:"no skin Senstivety",
-    option2:'Senstive'
+    option1: "no skin Senstivety",
+    option2: "Senstive",
   },
   {
     id: 2,
     name: "normalSkin",
-    option1:"no Normal Skin",
-    option2:'Normal'
+    option1: "no Normal Skin",
+    option2: "Normal",
   },
   {
     id: 3,
     name: "drySkin",
-    option1:"no Dry Skin",
-    option2:'Dry'
+    option1: "no Dry Skin",
+    option2: "Dry",
   },
   {
     id: 4,
     name: "oilySkin",
-    option1:"no Oily Skin",
-    option2:'Oily'
+    option1: "no Oily Skin",
+    option2: "Oily",
   },
   {
     id: 5,
     name: "combinationSkin",
-    option1:"no Combination Skin",
-    option2:'Combination'
+    option1: "no Combination Skin",
+    option2: "Combination",
   },
   {
     id: 6,
     name: "atopicSkin",
-    option1:"no Atopic Skin",
-    option2:'Atopic'
+    option1: "no Atopic Skin",
+    option2: "Atopic",
   },
   {
     id: 7,
-    name: "akne-poreSkin",
-    option1:"no Akne-pore Skin",
-    option2:'Akne-pore'
+    name: "aknePoreSkin",
+    option1: "no AknePore Skin",
+    option2: "AknePore",
   },
   {
     id: 8,
-    name: "hyperPigmentedSkin",
-    option1:"no HyperPigmented Skin",
-    option2:'HyperPigmented'
+    name: "hyperpigmentedSkin",
+    option1: "no HyperPigmented Skin",
+    option2: "HyperPigmented",
   },
   {
     id: 9,
     name: "flushedSkin",
-    option1:"no Flushed Skin",
-    option2:'Flushed'
+    option1: "no Flushed Skin",
+    option2: "Flushed",
   },
+];
+
+export const freeDb = [
+  { name: "soapFree" },
+  { name: "paraffinFree" },
+  { name: "fregranceFree" },
 ];
