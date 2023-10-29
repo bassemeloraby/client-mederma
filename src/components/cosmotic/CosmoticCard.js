@@ -86,6 +86,8 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                   {c.oilySkin}
                   {c.combinationSkin && " and "}
                   {c.combinationSkin}
+                  {c.atopicSkin && " and "}
+                  {c.atopicSkin}
                 </ListGroup.Item>
                 <ListGroup.Item>Price: {c.price} SR</ListGroup.Item>
 

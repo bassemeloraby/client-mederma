@@ -37,6 +37,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     drySkin: updateProduct.drySkin,
     oilySkin: updateProduct.oilySkin,
     combinationSkin: updateProduct.combinationSkin,
+    atopicSkin: updateProduct.atopicSkin,
     price: updateProduct.price,
     picLink: updateProduct.picLink,
   });
@@ -57,6 +58,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     drySkin,
     oilySkin,
     combinationSkin,
+    atopicSkin,
     price,
     picLink,
   } = formData;
@@ -91,6 +93,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         drySkin: drySkin,
         oilySkin: oilySkin,
         combinationSkin: combinationSkin,
+        atopicSkin: atopicSkin,
         price: price,
         picLink: picLink,
       });
@@ -112,6 +115,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         uu.drySkin = drySkin;
         uu.oilySkin = oilySkin;
         uu.combinationSkin = combinationSkin;
+        uu.atopicSkin = atopicSkin;
         uu.price = price;
         uu.picLink = picLink;
       }
@@ -372,6 +376,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   <Form.Control placeholder={drySkin} disabled />
                   <Form.Control placeholder={oilySkin} disabled />
                   <Form.Control placeholder={combinationSkin} disabled />
+                  <Form.Control placeholder={atopicSkin} disabled />
                 </Form.Group>
               </section>
               <section className="15-2 ">
@@ -414,6 +419,14 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                 >
                   <option value="">no combination Skin</option>
                   <option value="Combination">Combination</option>
+                </Form.Select>
+                <Form.Select
+                  aria-label="Default select example"
+                  onChange={onChange}
+                  name="atopicSkin"
+                >
+                  <option value="">no atopic Skin</option>
+                  <option value="AtopicSkin">AtopicSkin</option>
                 </Form.Select>
               </section>
             </div>
