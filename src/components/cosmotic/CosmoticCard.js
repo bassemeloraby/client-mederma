@@ -90,6 +90,9 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                   {c.atopicSkin}
                 </ListGroup.Item>
                 <ListGroup.Item>Price: {c.price} SR</ListGroup.Item>
+                <ListGroup.Item>Price: {c.soapFree}</ListGroup.Item>
+                <ListGroup.Item>Price: {c.paraffinFree}</ListGroup.Item>
+                <ListGroup.Item>Price: {c.fregranceFree}</ListGroup.Item>
 
                 <ListGroup.Item>
                   <GoogleLink name={c.Description} />
