@@ -6,6 +6,7 @@ import {
   usedAreaDb,
   formDb,
   companyCategoryDb,
+  skinKindDb,
 } from "../../data/CosmoticData";
 import { mainUrl } from "../../data";
 import axios from "axios";
@@ -172,10 +173,10 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               <GoogleLink color="white" name={Description} />
               {/*---------end updateProduct Description---------*/}
               {/*---------start updateProduct img---------*/}
-               {picLink && (
+              {picLink && (
                 <img src={picLink} alt="insurance2" className=""></img>
               )}
-             
+
               {/*---------end updateProduct img---------*/}
             </Form.Group>
           </section>
@@ -200,7 +201,6 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   )
                 )}
               </Form.Select>
-            
             </div>
             {/*---------end updateProduct Company---------*/}
             {/*---------start updateProduct form---------*/}
@@ -380,54 +380,18 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                 </Form.Group>
               </section>
               <section className="15-2 ">
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={onChange}
-                  name="skinSenstivety"
-                >
-                  <option value="">no skin Senstivety</option>
-                  <option value="Senstive">Senstive</option>
-                </Form.Select>
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={onChange}
-                  name="normalSkin"
-                >
-                  <option value="">no normal Skin</option>
-                  <option value="Normal">Normal</option>
-                </Form.Select>
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={onChange}
-                  name="drySkin"
-                >
-                  <option value="">no dry Skin</option>
-                  <option value="Dry">Dry</option>
-                </Form.Select>
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={onChange}
-                  name="oilySkin"
-                >
-                  <option value="">no oily Skin</option>
-                  <option value="Oily">Oily</option>
-                </Form.Select>
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={onChange}
-                  name="combinationSkin"
-                >
-                  <option value="">no combination Skin</option>
-                  <option value="Combination">Combination</option>
-                </Form.Select>
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={onChange}
-                  name="atopicSkin"
-                >
-                  <option value="">no atopic Skin</option>
-                  <option value="AtopicSkin">AtopicSkin</option>
-                </Form.Select>
+                {skinKindDb.map((s, i) => (
+                  <Form.Select
+                    aria-label="Default select example"
+                    onChange={onChange}
+                    name={s.name}
+                    key={i}
+                  >
+                    <option value="">--{s.name}--</option>
+                    <option value="">{s.option1}</option>
+                    <option value={s.option2}>{s.option2}</option>
+                  </Form.Select>
+                ))}
               </section>
             </div>
             {/*---------end updateProduct  skin kind---------*/}

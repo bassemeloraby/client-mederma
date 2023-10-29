@@ -204,47 +204,56 @@ export const updateFormDb = [
 export const skinKindDb = [
   {
     id: 1,
-    text: "skinSenstivety",
-    ping:[{name:"no skin Senstivety"},{type:'Senstive'}]
+    name: "skinSenstivety",
+    option1:"no skin Senstivety",
+    option2:'Senstive'
   },
   {
     id: 2,
-    text: "normalSkin",
+    name: "normalSkin",
+    option1:"no Normal Skin",
+    option2:'Normal'
   },
   {
     id: 3,
-    text: "drySkin",
+    name: "drySkin",
+    option1:"no Dry Skin",
+    option2:'Dry'
   },
   {
     id: 4,
-    text: "oilySkin",
+    name: "oilySkin",
+    option1:"no Oily Skin",
+    option2:'Oily'
   },
   {
     id: 5,
-    text: "combinationSkin",
+    name: "combinationSkin",
+    option1:"no Combination Skin",
+    option2:'Combination'
   },
   {
     id: 6,
-    text: "atopicSkin",
+    name: "atopicSkin",
+    option1:"no Atopic Skin",
+    option2:'Atopic'
   },
   {
     id: 7,
-    text: "akne-poreSkin",
+    name: "akne-poreSkin",
+    option1:"no Akne-pore Skin",
+    option2:'Akne-pore'
   },
   {
     id: 8,
-    text: "hyperPigmentedSkin",
+    name: "hyperPigmentedSkin",
+    option1:"no HyperPigmented Skin",
+    option2:'HyperPigmented'
   },
   {
     id: 9,
-    text: "dehydratedSkin",
-  },
-  {
-    id: 10,
-    text: "iritatedSkin",
-  },
-  {
-    id: 11,
-    text: "damagedSkin",
+    name: "flushedSkin",
+    option1:"no Flushed Skin",
+    option2:'Flushed'
   },
 ];
