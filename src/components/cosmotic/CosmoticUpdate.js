@@ -220,15 +220,18 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     key={i}
+                    className="ms-2"
                   >
                     product site
                   </Link>
                 ))}
-                
+
                 {/*---------end updateProduct Description---------*/}
                 {/*---------start updateProduct img---------*/}
                 {picLink && (
-                  <img src={picLink} alt="insurance2" className=""></img>
+                  <div class="div-img mb-2">
+                    <img src={picLink} alt="insurance2" className="img1"></img>
+                  </div>
                 )}
 
                 {/*---------end updateProduct img---------*/}
@@ -286,6 +289,19 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
           </section>
           <section className="2">
             {" "}
+            {/*----start company product name --------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <Form.Group className="me-2 col-12 ">
+                <Form.Control
+                  className="text-lowercase"
+                  placeholder={
+                    Company + " " + companyCategory1 + " " + compProType
+                  }
+                  disabled
+                />
+              </Form.Group>
+            </div>
+            {/*----end company product name --------*/}
             {/*---------start updateProduct Company---------*/}
             <div className="bg-success p-2 mb-2 rounded-2 d-flex">
               <Form.Group className="me-2">

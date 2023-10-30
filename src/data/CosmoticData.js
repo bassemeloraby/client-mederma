@@ -45,7 +45,7 @@ export const CompanyDb = [
   {
     id: 1,
     name: "BIODERMA",
-    ourPro:'https://www.bioderma.ae/our-products/'
+    ourPro:'https://www.bioderma.sa/our-products/'
   },
   {
     id: 2,
@@ -132,6 +132,7 @@ export const compProTypeDb = [
   {name:"nutritive"},
   {name:"sos-spray"},
   {name:"stick-levres"},
+  {name:"aquafluide-spf50"},
 ]
 
 export const formDb = [

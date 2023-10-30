@@ -53,7 +53,9 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                 <Card.Title>{c.Description}</Card.Title>
               </div>
               {c.picLink && (
-                <img src={c.picLink} alt="insurance2" className=""></img>
+                <div class="div-img mb-2">
+                  <img src={c.picLink} alt="insurance2" className="img1"></img>
+                </div>
               )}
             </div>
             <div className="12 col-6 ">
