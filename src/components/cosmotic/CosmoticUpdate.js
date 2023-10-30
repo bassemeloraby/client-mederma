@@ -8,7 +8,6 @@ import {
   companyCategoryDb,
   skinKindDb,
   freeDb,
-  compProTypeDb,
 } from "../../data/CosmoticData";
 import { mainUrl } from "../../data";
 import axios from "axios";
@@ -328,20 +327,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               <Form.Group className="me-2">
                 <Form.Control placeholder={compProType} disabled />
               </Form.Group>
-              <Form.Select
-                aria-label="Default select example"
-                onChange={onChange}
-                name="compProType"
-              >
-                <option value="">--CompProType--</option>
-                {compProTypeDb
-                  .sort((a, b) => (a.name < b.name ? -1 : 1))
-                  .map((c, i) => (
-                    <option key={i} value={c.name}>
-                      {c.name}
-                    </option>
-                  ))}
-              </Form.Select>
+              <Form.Group className="">
+                <Form.Control onChange={onChange} name="compProType" />
+              </Form.Group>
             </div>
             {/*---------end updateProduct compProType---------*/}
             {/*---------start updateProduct form---------*/}
