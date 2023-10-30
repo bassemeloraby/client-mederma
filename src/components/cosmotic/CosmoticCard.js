@@ -61,6 +61,7 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
             <div className="12 col-6 ">
               <ListGroup className="list-group-flush">
                 <ListGroup.Item>Company: {c.Company}</ListGroup.Item>
+                <ListGroup.Item>Product Type: {c.compProType}</ListGroup.Item>
                 <ListGroup.Item>Form: {c.form}</ListGroup.Item>
                 <ListGroup.Item>
                   Company Category: {c.companyCategory1}
@@ -79,7 +80,7 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   Skin Kind: {c.skinSenstivety}
-                  {!c.skinSenstivety && "None Senstive"}
+                  {!c.skinSenstivety && ""}
                   {c.normalSkin && " and "}
                   {c.normalSkin}
                   {c.drySkin && " and "}
@@ -90,6 +91,16 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                   {c.combinationSkin}
                   {c.atopicSkin && " and "}
                   {c.atopicSkin}
+                  {c.aknePoreSkin && " and "}
+                  {c.aknePoreSkin}
+                  {c.hyperpigmentedSkin && " and "}
+                  {c.hyperpigmentedSkin}
+                  {c.flushedSkin && " and "}
+                  {c.flushedSkin}
+                  {c.irritatedSkin && " and "}
+                  {c.irritatedSkin}
+                  {c.damagedSkin && " and "}
+                  {c.damagedSkin}
                 </ListGroup.Item>
                 <ListGroup.Item> {c.price} SR</ListGroup.Item>
                 <ListGroup.Item> {c.soapFree}</ListGroup.Item>
