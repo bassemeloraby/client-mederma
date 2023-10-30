@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import GoogleLink from "../GoogleLink";
 import Spinner from "../Spinner";
+import { CompanyDb } from "../../data/CosmoticData";
 
 const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
   const navigate = useNavigate();
@@ -49,17 +50,35 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
         .map((c, i) => (
           <section key={i} className="d-flex">
             <div className="11 col-6 border-end">
-              <div className="">
+              <div className="mb-2">
                 <Card.Title>{c.Description}</Card.Title>
               </div>
+              
               {c.picLink && (
                 <div class="div-img mb-2">
                   <img src={c.picLink} alt="insurance2" className="img1"></img>
                 </div>
               )}
+              <div className="mb-2">
+                {CompanyDb.filter((x) => x.name === c.Company).map((x, i) => (
+                  <Link
+                    to={`${x.ourPro}${c.companyCategory1}/${c.compProType}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={i}
+                    className="ms-2"
+                  >
+                    product site
+                  </Link>
+                ))}{" "}
+              </div>
             </div>
             <div className="12 col-6 ">
               <ListGroup className="list-group-flush">
+                <ListGroup.Item className="text-lowercase text-danger">
+                  {c.Company + " " + c.companyCategory1 + " " + c.compProType}
+                </ListGroup.Item>
+                
                 <ListGroup.Item>Company: {c.Company}</ListGroup.Item>
                 <ListGroup.Item>Product Type: {c.compProType}</ListGroup.Item>
                 <ListGroup.Item>Form: {c.form}</ListGroup.Item>
@@ -102,7 +121,9 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                   {c.damagedSkin && " and "}
                   {c.damagedSkin}
                 </ListGroup.Item>
-                <ListGroup.Item> {c.price} SR</ListGroup.Item>
+                {c.price && (
+                  <ListGroup.Item>price: {c.price} SR</ListGroup.Item>
+                )}
                 <ListGroup.Item> {c.soapFree}</ListGroup.Item>
                 <ListGroup.Item> {c.paraffinFree}</ListGroup.Item>
                 <ListGroup.Item> {c.fregranceFree}</ListGroup.Item>
@@ -114,7 +135,11 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
               </ListGroup>
               {user && (
                 <div>
-                  <Button variant="success" onClick={() => editHandler(c)}>
+                  <Button
+                    variant="success"
+                    onClick={() => editHandler(c)}
+                    className="mb-2"
+                  >
                     Edit
                   </Button>{" "}
                 </div>

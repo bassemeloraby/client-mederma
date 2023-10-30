@@ -50,6 +50,7 @@ export const CompanyDb = [
   {
     id: 2,
     name: "EUCERIN",
+    ourPro:'https://www.en.eucerin-me.com/products/'
   },
 ];
 
