@@ -169,6 +169,10 @@ export const formDb = [
     id: 9,
     name: "lotion",
   },
+  {
+    id: 10,
+    name: "oil",
+  },
 ];
 export const usedAreaDb = [
   {

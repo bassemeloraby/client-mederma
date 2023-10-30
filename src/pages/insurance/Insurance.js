@@ -21,10 +21,15 @@ function Insurance() {
           </Nav.Item>
         ))}
       </Nav>
+      <div className="row">
+        <span className="border m-3 bg-info border-black col-4">
+          TOTAL CARE MACHINE TEL : 920014001
+        </span>
+        <span className="border m-3 bg-info border-black col-4">
+          Wasfaty TEL : 920000932
+        </span>
+      </div>
 
-      <span className="border m-3 bg-info border-black">
-        TOTAL CARE MACHINE TEL : 920014001
-      </span>
       <div className="ratio ratio-16x9 mt-3" style={{ width: "40rem" }}>
         <iframe
           src="https://www.youtube.com/embed/7wX3Pnjecqc"

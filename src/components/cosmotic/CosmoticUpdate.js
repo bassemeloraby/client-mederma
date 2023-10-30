@@ -199,7 +199,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         style={{ backgroundColor: "brown" }}
         className="p-2 text-light mb-2 rounded-2"
       >
+     
         <div className="12 d-flex justify-content-around">
+         {/*----------------------- the left half --------------------------------------------------- */}
           <section className="1 col-6">
             {" "}
             {/*---------start updateProduct Description---------*/}
@@ -273,6 +275,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                 ))}
               </section>
             </div>
+             {/*--------------------------start dose---------------------------------------- */}
             <div className="1-2 bg-success p-2 mb-2 rounded-2 justify-content-center">
               <Form.Group className="">
                 <Form.Control placeholder={dose} disabled className="mb-2" />
@@ -286,6 +289,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               </Form.Group>
             </div>
           </section>
+           {/*----------------------- the wright half --------------------------------------------------- */}
           <section className="2">
             {" "}
             {/*----start company product name --------*/}

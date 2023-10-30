@@ -56,4 +56,9 @@ export const insuranceLinks = [
     text: "waseel",
     link: "https://portal.waseel.com/WaseelSwitch/web/xhtml/login/HomePage.jsf",
   },
+  {
+    id: 5,
+    text: "wasfaty",
+    link: "https://wasfaty.sa/",
+  },
 ];
