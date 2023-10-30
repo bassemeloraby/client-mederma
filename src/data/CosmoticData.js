@@ -45,6 +45,7 @@ export const CompanyDb = [
   {
     id: 1,
     name: "BIODERMA",
+    ourPro:'https://www.bioderma.ae/our-products/'
   },
   {
     id: 2,
@@ -118,6 +119,20 @@ export const companyCategoryDb = [
     name: "ANTITRANSPIRANT",
   },
 ];
+
+export const compProTypeDb = [
+  {name:"intensive-baume"},
+  {name:"baume-levres"},
+  {name:"creme"},
+  {name:"gel-douche"},
+  {name:"huile-de-douche"},
+  {name:"intensive-gel-moussant"},
+  {name:"intensive-pain"},
+  {name:"mains-ongles"},
+  {name:"nutritive"},
+  {name:"sos-spray"},
+  {name:"stick-levres"},
+]
 
 export const formDb = [
   {
@@ -255,6 +270,18 @@ export const skinKindDb = [
     name: "flushedSkin",
     option1: "no Flushed Skin",
     option2: "Flushed",
+  },
+  {
+    id: 10,
+    name: "irritatedSkin",
+    option1: "no Irritated Skin",
+    option2: "Irritated",
+  },
+  {
+    id: 11,
+    name: "damagedSkin",
+    option1: "no Damaged Skin",
+    option2: "Damaged",
   },
 ];
 

@@ -93,6 +93,7 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
                 <ListGroup.Item> {c.soapFree}</ListGroup.Item>
                 <ListGroup.Item> {c.paraffinFree}</ListGroup.Item>
                 <ListGroup.Item> {c.fregranceFree}</ListGroup.Item>
+                <ListGroup.Item> {c.dose}</ListGroup.Item>
 
                 <ListGroup.Item>
                   <GoogleLink name={c.Description} />

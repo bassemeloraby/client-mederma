@@ -67,7 +67,7 @@ const IdleTimerContainer = () => {
 
   return (
     <Fragment>
-      {isLoggedIn ? <h2> Welcome admin</h2> : <h2>hello guset</h2>}
+      {isLoggedIn && <h6> Welcome admin</h6>}
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <h2>you have been idle for a while!</h2>
         <p>you will be logged out soon</p>

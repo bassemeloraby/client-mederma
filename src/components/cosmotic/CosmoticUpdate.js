@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import {
   useDb,
@@ -8,6 +8,7 @@ import {
   companyCategoryDb,
   skinKindDb,
   freeDb,
+  compProTypeDb,
 } from "../../data/CosmoticData";
 import { mainUrl } from "../../data";
 import axios from "axios";
@@ -27,6 +28,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
   const [formData, setFormData] = useState({
     Description: updateProduct.Description,
     Company: updateProduct.Company,
+    compProType: updateProduct.compProType,
     form: updateProduct.form,
     companyCategory1: updateProduct.companyCategory1,
     companyCategory2: updateProduct.companyCategory2,
@@ -43,16 +45,20 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     aknePoreSkin: updateProduct.aknePoreSkin,
     hyperpigmentedSkin: updateProduct.hyperpigmentedSkin,
     flushedSkin: updateProduct.flushedSkin,
+    irritatedSkin: updateProduct.irritatedSkin,
+    damagedSkin: updateProduct.damagedSkin,
     price: updateProduct.price,
     picLink: updateProduct.picLink,
     soapFree: updateProduct.soapFree,
     paraffinFree: updateProduct.paraffinFree,
     fregranceFree: updateProduct.fregranceFree,
+    dose: updateProduct.dose,
   });
 
   const {
     Description,
     Company,
+    compProType,
     form,
     companyCategory1,
     companyCategory2,
@@ -69,11 +75,14 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     aknePoreSkin,
     hyperpigmentedSkin,
     flushedSkin,
+    irritatedSkin,
+    damagedSkin,
     price,
     picLink,
     soapFree,
     paraffinFree,
     fregranceFree,
+    dose,
   } = formData;
   // -----------functions-------------//
   const cancelHandler = () => {
@@ -94,6 +103,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     try {
       const res = await axios.patch(`${url}/${id}`, {
         Company: Company,
+        compProType: compProType,
         form: form,
         companyCategory1: companyCategory1,
         companyCategory2: companyCategory2,
@@ -110,11 +120,14 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         aknePoreSkin: aknePoreSkin,
         hyperpigmentedSkin: hyperpigmentedSkin,
         flushedSkin: flushedSkin,
+        irritatedSkin: irritatedSkin,
+        damagedSkin: damagedSkin,
         price: price,
         picLink: picLink,
         soapFree: soapFree,
         paraffinFree: paraffinFree,
         fregranceFree: fregranceFree,
+        dose: dose,
       });
 
       setLoading(false);
@@ -122,6 +135,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
       const uu = cosmotics.find((comp) => comp._id === id);
       if (uu) {
         uu.Company = Company;
+        uu.compProType = compProType;
         uu.form = form;
         uu.companyCategory1 = companyCategory1;
         uu.companyCategory2 = companyCategory2;
@@ -138,11 +152,14 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         uu.aknePoreSkin = aknePoreSkin;
         uu.hyperpigmentedSkin = hyperpigmentedSkin;
         uu.flushedSkin = flushedSkin;
+        uu.irritatedSkin = irritatedSkin;
+        uu.damagedSkin = damagedSkin;
         uu.price = price;
         uu.picLink = picLink;
         uu.soapFree = soapFree;
         uu.paraffinFree = paraffinFree;
         uu.fregranceFree = fregranceFree;
+        uu.dose = dose;
       }
       navigate(`/cosmotics/cosmoticCard/${id}`);
     } catch (error) {
@@ -197,6 +214,17 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   className="mb-2 "
                 />
                 <GoogleLink color="white" name={Description} />
+                {CompanyDb.filter((c) => c.name === Company).map((c, i) => (
+                  <Link
+                    to={`${c.ourPro}${companyCategory1}/${compProType}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={i}
+                  >
+                    product site
+                  </Link>
+                ))}
+                
                 {/*---------end updateProduct Description---------*/}
                 {/*---------start updateProduct img---------*/}
                 {picLink && (
@@ -207,29 +235,53 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               </Form.Group>
             </div>
             <div className="1-2 d-flex bg-success p-2 mb-2 rounded-2 justify-content-center">
-            <section className="1-2-1 me-2">
+              <section className="1-2-1 me-2">
                 {" "}
                 <Form.Group className="">
-                  <Form.Control placeholder={soapFree} disabled className="mb-2" />
-                  <Form.Control placeholder={paraffinFree} disabled className="mb-2"/>
-                  <Form.Control placeholder={fregranceFree} disabled className="mb-2"/>
+                  <Form.Control
+                    placeholder={soapFree}
+                    disabled
+                    className="mb-2"
+                  />
+                  <Form.Control
+                    placeholder={paraffinFree}
+                    disabled
+                    className="mb-2"
+                  />
+                  <Form.Control
+                    placeholder={fregranceFree}
+                    disabled
+                    className="mb-2"
+                  />
                 </Form.Group>
               </section>
               <section className="1-2-2">
-              {freeDb.map((s, i) => (
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={onChange}
-                  name={s.name}
-                  key={i}
+                {freeDb.map((s, i) => (
+                  <Form.Select
+                    aria-label="Default select example"
+                    onChange={onChange}
+                    name={s.name}
+                    key={i}
+                    className="mb-2"
+                  >
+                    <option value="">--{s.name}--</option>
+                    <option value="">no</option>
+                    <option value={s.name}>{s.name}</option>
+                  </Form.Select>
+                ))}
+              </section>
+            </div>
+            <div className="1-2 bg-success p-2 mb-2 rounded-2 justify-content-center">
+              <Form.Group className="">
+                <Form.Control placeholder={dose} disabled className="mb-2" />
+              </Form.Group>
+              <Form.Group className="">
+                <Form.Control
                   className="mb-2"
-                >
-                  <option value="">--{s.name}--</option>
-                  <option value="">no</option>
-                  <option value={s.name}>{s.name}</option>
-                </Form.Select>
-              ))}
-            </section>
+                  onChange={onChange}
+                  name="dose"
+                />
+              </Form.Group>
             </div>
           </section>
           <section className="2">
@@ -255,6 +307,27 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               </Form.Select>
             </div>
             {/*---------end updateProduct Company---------*/}
+            {/*---------start updateProduct compProType---------*/}
+            <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+              <Form.Group className="me-2">
+                <Form.Control placeholder={compProType} disabled />
+              </Form.Group>
+              <Form.Select
+                aria-label="Default select example"
+                onChange={onChange}
+                name="compProType"
+              >
+                <option value="">--CompProType--</option>
+                {compProTypeDb
+                  .sort((a, b) => (a.name < b.name ? -1 : 1))
+                  .map((c, i) => (
+                    <option key={i} value={c.name}>
+                      {c.name}
+                    </option>
+                  ))}
+              </Form.Select>
+            </div>
+            {/*---------end updateProduct compProType---------*/}
             {/*---------start updateProduct form---------*/}
             <div className="bg-success p-2 mb-2 rounded-2 d-flex">
               <Form.Group className="me-2">
@@ -423,15 +496,61 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               <section className="15-1 me-2">
                 {" "}
                 <Form.Group className="mb-2">
-                  <Form.Control placeholder={skinSenstivety} disabled />
-                  <Form.Control placeholder={normalSkin} disabled />
-                  <Form.Control placeholder={drySkin} disabled />
-                  <Form.Control placeholder={oilySkin} disabled />
-                  <Form.Control placeholder={combinationSkin} disabled />
-                  <Form.Control placeholder={atopicSkin} disabled />
-                  <Form.Control placeholder={aknePoreSkin} disabled />
-                  <Form.Control placeholder={hyperpigmentedSkin} disabled />
-                  <Form.Control placeholder={flushedSkin} disabled />
+                  <Form.Control
+                    placeholder={skinSenstivety}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={normalSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={drySkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={oilySkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={combinationSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={atopicSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={aknePoreSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={hyperpigmentedSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={flushedSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={irritatedSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
+                  <Form.Control
+                    placeholder={damagedSkin}
+                    disabled
+                    className="border-bottom border-warning"
+                  />
                 </Form.Group>
               </section>
               <section className="15-2 ">
@@ -441,6 +560,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                     onChange={onChange}
                     name={s.name}
                     key={i}
+                    className="border-bottom border-warning"
                   >
                     <option value="">--{s.name}--</option>
                     <option value="">{s.option1}</option>
