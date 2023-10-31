@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { FcSearch, FcFilledFilter } from "react-icons/fc";
 
 export const mainPages = [
@@ -23,6 +24,15 @@ export const mainPages = [
         link: "/cosmotics/cosmoticFilter",
         icon: <FcFilledFilter />,
       },
+      {
+        name: "cosmoticSF",
+        link: "/cosmotics/cosmoticSF",
+        icon: (
+          <Fragment>
+            <FcFilledFilter /> <FcSearch />
+          </Fragment>
+        ),
+      },
     ],
   },
   {
@@ -31,7 +41,6 @@ export const mainPages = [
     ping: [{ name: "insurance", link: "/insurance" }],
   },
 ];
-
 
 export const mainUrl = "https://rich-blue-llama-vest.cyclic.cloud/api/";
 

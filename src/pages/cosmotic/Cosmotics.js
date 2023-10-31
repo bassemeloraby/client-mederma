@@ -9,6 +9,7 @@ import CosmoticSearch from "../../components/cosmotic/CosmoticSearch";
 import CosmoticUpdate from "../../components/cosmotic/CosmoticUpdate";
 import CosmoticCard from "../../components/cosmotic/CosmoticCard";
 import CosmoticFilter from "../../components/cosmotic/CosmoticFilter";
+import CosmoticSF from "../../components/cosmotic/CosmoticSF";
 
 // const url = "/api/products";
 const url = mainUrl + "products";
@@ -108,6 +109,15 @@ const Cosmotics = () => {
               cosmotics={cosmotics}
               user={user}
               setUpdateProduct={setUpdateProduct}
+            />
+          }
+        />
+        <Route
+          path="cosmoticSF"
+          element={
+            <CosmoticSF
+              cosmotics={cosmotics}
+              user={user}
             />
           }
         />
