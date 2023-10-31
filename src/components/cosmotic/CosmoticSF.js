@@ -35,7 +35,7 @@ const ListContainer = styled.div`
   justify-content: center;
 `;
 
-export default function CosmoticSF({ cosmotics }) {
+export default function CosmoticSF({ cosmotics, user, setUpdateProduct }) {
   return (
     <Fragment>
       <VirtuosoGrid
@@ -58,7 +58,11 @@ export default function CosmoticSF({ cosmotics }) {
             className="border "
             style={{ display: "flex", alignItems: "center" }}
           >
-          <CosmoticCardSF prod={prod}/>
+            <CosmoticCardSF
+              prod={prod}
+              user={user}
+              setUpdateProduct={setUpdateProduct}
+            />
           </ItemWrapper>
         )}
         scrollSeekConfiguration={{

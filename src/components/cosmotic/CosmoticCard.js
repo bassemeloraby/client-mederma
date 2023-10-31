@@ -22,6 +22,11 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
     navigate(`/cosmotics/cosmoticFilter`);
     setLoading(false);
   };
+  const SF = () => {
+    setLoading(true);
+    navigate(`/cosmotics/cosmoticSF`);
+    setLoading(false);
+  };
 
   const editHandler = (prod) => {
     setUpdateProduct(prod);
@@ -43,6 +48,9 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
         <Button variant="primary" onClick={filter}>
           Cosmotic Filter
         </Button>{" "}
+        <Button variant="primary" onClick={SF}>
+         SF
+        </Button>{" "}
       </div>
 
       {cosmotics
@@ -55,7 +63,7 @@ const CosmoticCard = ({ cosmotics, setUpdateProduct, user }) => {
               </div>
               
               {c.picLink && (
-                <div class="div-img mb-2">
+                <div className="div-img mb-2">
                   <img src={c.picLink} alt="insurance2" className="img1"></img>
                 </div>
               )}

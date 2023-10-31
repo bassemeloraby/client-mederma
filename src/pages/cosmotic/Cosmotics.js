@@ -119,6 +119,7 @@ const Cosmotics = () => {
             <CosmoticSF
               cosmotics={cosmotics}
               user={user}
+              setUpdateProduct={setUpdateProduct}
             />
           }
         />
