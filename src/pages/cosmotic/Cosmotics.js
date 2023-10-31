@@ -45,7 +45,8 @@ const Cosmotics = () => {
       cosmotics.filter(
         (x) =>
           x.Description.toLowerCase().includes(query?.toLowerCase()) ||
-          x.Company.toLowerCase().includes(query?.toLowerCase())
+          x.Company.toLowerCase().includes(query?.toLowerCase()) ||
+          x.intBarcode?.includes(query)
       )
     );
   }, [query, cosmotics]);

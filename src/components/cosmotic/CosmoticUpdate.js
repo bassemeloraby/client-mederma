@@ -52,6 +52,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     paraffinFree: updateProduct.paraffinFree,
     fregranceFree: updateProduct.fregranceFree,
     dose: updateProduct.dose,
+    intBarcode: updateProduct.intBarcode,
   });
 
   const {
@@ -82,6 +83,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     paraffinFree,
     fregranceFree,
     dose,
+    intBarcode,
   } = formData;
   // -----------functions-------------//
   const cancelHandler = () => {
@@ -127,6 +129,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         paraffinFree,
         fregranceFree,
         dose,
+        intBarcode,
       });
 
       setLoading(false);
@@ -159,6 +162,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         uu.paraffinFree = paraffinFree;
         uu.fregranceFree = fregranceFree;
         uu.dose = dose;
+        uu.intBarcode = intBarcode;
       }
       navigate(`/cosmotics/cosmoticCard/${id}`);
     } catch (error) {
@@ -285,6 +289,19 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   className="mb-2"
                   onChange={onChange}
                   name="dose"
+                />
+              </Form.Group>
+            </div>
+             {/*--------------------------start intBarcode---------------------------------------- */}
+            <div className="1-2 bg-success p-2 mb-2 rounded-2 justify-content-center">
+              <Form.Group className="">
+                <Form.Control placeholder={intBarcode} disabled className="mb-2" />
+              </Form.Group>
+              <Form.Group className="">
+                <Form.Control
+                  className="mb-2"
+                  onChange={onChange}
+                  name="intBarcode"
                 />
               </Form.Group>
             </div>
