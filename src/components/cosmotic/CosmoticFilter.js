@@ -71,6 +71,7 @@ const CosmoticFilter = ({ cosmotics, user, setUpdateProduct }) => {
       </div>
 
       <section className="filterKind mb-2 col-3">
+      Search by
         <Form.Select
           aria-label="Default select example"
           onChange={(e) => setFilterKind(e.target.value)}
