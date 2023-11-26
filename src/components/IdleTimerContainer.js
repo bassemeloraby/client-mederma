@@ -29,7 +29,7 @@ const IdleTimerContainer = () => {
     ref: idleTimerRef,
     //for 10 minutes
     // timeout: 15 * 60 * 1000,
-    timeout: 5 * 1000,
+    timeout: 10 * 1000,
     onIdle: onIdle,
   });
 
@@ -47,6 +47,7 @@ const IdleTimerContainer = () => {
   const stayActive = () => {
     setModalIsOpen(false);
     clearTimeout(sessionTimeOutRef.current);
+    setTimer(10);
     // window.location.reload();
     navigate("/");
     console.log("user still active");
@@ -68,6 +69,9 @@ const IdleTimerContainer = () => {
       const intId = setInterval(() => {
         setTimer(timer - 1);
       }, 1000);
+      return () => {
+        clearInterval(intId);
+      };
     }
   }, [timer, modalIsOpen]);
   console.log(timer);
@@ -77,7 +81,8 @@ const IdleTimerContainer = () => {
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <h2>you have been idle for a while!</h2>
         <p>you will be logged out soon</p>
-        {timer}
+        <h3>{timer}</h3>
+
         <div>
           <Button onClick={onLogout} variant="danger">
             log me out
