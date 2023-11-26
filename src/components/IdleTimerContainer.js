@@ -49,7 +49,7 @@ const IdleTimerContainer = () => {
     clearTimeout(sessionTimeOutRef.current);
     setTimer(10);
     // window.location.reload();
-    navigate("/");
+    // navigate("/");
     console.log("user still active");
   };
 
