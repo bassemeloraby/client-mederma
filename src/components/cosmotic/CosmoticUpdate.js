@@ -35,7 +35,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     use2: updateProduct.use2,
     usedArea1: updateProduct.usedArea1,
     usedArea2: updateProduct.usedArea2,
-    skinSenstivety: updateProduct.skinSenstivety,
+    skinSensitivety: updateProduct.skinSensitivety,
     normalSkin: updateProduct.normalSkin,
     drySkin: updateProduct.drySkin,
     oilySkin: updateProduct.oilySkin,
@@ -66,7 +66,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     use2,
     usedArea1,
     usedArea2,
-    skinSenstivety,
+    skinSensitivety,
     normalSkin,
     drySkin,
     oilySkin,
@@ -112,7 +112,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         use2,
         usedArea1,
         usedArea2,
-        skinSenstivety,
+        skinSensitivety,
         normalSkin,
         drySkin,
         oilySkin,
@@ -145,7 +145,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         uu.use2 = use2;
         uu.usedArea1 = usedArea1;
         uu.usedArea2 = usedArea2;
-        uu.skinSenstivety = skinSenstivety;
+        uu.skinSensitivety = skinSensitivety;
         uu.normalSkin = normalSkin;
         uu.drySkin = drySkin;
         uu.oilySkin = oilySkin;
@@ -522,7 +522,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                 {" "}
                 <Form.Group className="mb-2">
                   <Form.Control
-                    placeholder={skinSenstivety}
+                    placeholder={skinSensitivety}
                     disabled
                     className="border-bottom border-warning"
                   />

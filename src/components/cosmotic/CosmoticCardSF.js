@@ -58,8 +58,8 @@ const CosmoticCardSF = ({ prod, user, setUpdateProduct }) => {
             {prod.usedArea2}
           </ListGroup.Item>
           <ListGroup.Item>
-            Skin Kind: {prod.skinSenstivety}
-            {!prod.skinSenstivety && ""}
+            Skin Kind: {prod.skinSensitivety}
+            {!prod.skinSensitivety && ""}
             {prod.normalSkin && " and "}
             {prod.normalSkin}
             {prod.drySkin && " and "}

@@ -33,6 +33,11 @@ export const mainPages = [
           </Fragment>
         ),
       },
+      {
+        name: "Diapers",
+        link: "/cosmotics/diapers",
+        icon: ""
+      }
     ],
   },
   {

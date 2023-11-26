@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { useIdleTimer } from "react-idle-timer";
 import Modal from "react-modal";
 import { logout, reset } from "../features/auth/authSlice";
@@ -10,7 +10,7 @@ Modal.setAppElement("#root");
 const IdleTimerContainer = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(10);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,8 +28,8 @@ const IdleTimerContainer = () => {
     crossTab: true,
     ref: idleTimerRef,
     //for 10 minutes
-    timeout: 15 * 60 * 1000,
-    // timeout: 5 * 1000,
+    // timeout: 15 * 60 * 1000,
+    timeout: 5 * 1000,
     onIdle: onIdle,
   });
 
@@ -63,14 +63,21 @@ const IdleTimerContainer = () => {
     },
   };
 
-  
-
+  useEffect(() => {
+    if (modalIsOpen) {
+      const intId = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+    }
+  }, [timer, modalIsOpen]);
+  console.log(timer);
   return (
     <Fragment>
       {isLoggedIn && <h6> Welcome admin</h6>}
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <h2>you have been idle for a while!</h2>
         <p>you will be logged out soon</p>
+        {timer}
         <div>
           <Button onClick={onLogout} variant="danger">
             log me out
