@@ -15,6 +15,7 @@ import Spinner from "../Spinner";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import GoogleLink from "../GoogleLink";
+import { FormLabel } from "react-bootstrap";
 
 const url = mainUrl + "products";
 
@@ -281,6 +282,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             </div>
              {/*--------------------------start dose---------------------------------------- */}
             <div className="1-2 bg-success p-2 mb-2 rounded-2 justify-content-center">
+            <FormLabel> Dose</FormLabel>
               <Form.Group className="">
                 <Form.Control placeholder={dose} disabled className="mb-2" />
               </Form.Group>
@@ -294,6 +296,8 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             </div>
              {/*--------------------------start intBarcode---------------------------------------- */}
             <div className="1-2 bg-success p-2 mb-2 rounded-2 justify-content-center">
+            <FormLabel>International barcode</FormLabel>
+
               <Form.Group className="">
                 <Form.Control placeholder={intBarcode} disabled className="mb-2" />
               </Form.Group>
@@ -323,7 +327,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             </div>
             {/*----end company product name --------*/}
             {/*---------start updateProduct Company---------*/}
+            <FormLabel> Company</FormLabel>
             <div className="bg-success p-2 mb-2 rounded-2 d-flex">
+            
               <Form.Group className="me-2">
                 <Form.Control placeholder={Company} disabled />
               </Form.Group>
@@ -344,6 +350,8 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             </div>
             {/*---------end updateProduct Company---------*/}
             {/*---------start updateProduct compProType---------*/}
+            <FormLabel> Company Product Type</FormLabel>
+
             <div className="bg-success p-2 mb-2 rounded-2 d-flex">
               <Form.Group className="me-2">
                 <Form.Control placeholder={compProType} disabled />
@@ -354,6 +362,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             </div>
             {/*---------end updateProduct compProType---------*/}
             {/*---------start updateProduct form---------*/}
+            <FormLabel> Form</FormLabel>
             <div className="bg-success p-2 mb-2 rounded-2 d-flex">
               <Form.Group className="me-2">
                 <Form.Control placeholder={form} disabled />
@@ -516,6 +525,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             </div>
             {/*---------end updateProduct  used Area---------*/}
             {/*---------start updateProduct  skin kind---------*/}
+            <FormLabel> Skin Kind</FormLabel>
             <div className="bg-warning p-2 mb-2 rounded-2 d-flex">
               {" "}
               <section className="15-1 me-2">
