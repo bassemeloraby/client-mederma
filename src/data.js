@@ -45,6 +45,11 @@ export const mainPages = [
     text: "Insurance",
     ping: [{ name: "insurance", link: "/insurance" }],
   },
+  {
+    id: 3,
+    text: "CosmoticGrid",
+    ping: [{ name: "CosmoticGrid", link: "/cosmoticGrid" }],
+  },
 ];
 
 export const mainUrl = "https://rich-blue-llama-vest.cyclic.cloud/api/";

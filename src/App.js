@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import NotFind from "./pages/NotFind";
 import MedCalc from "./pages/medicine/MedCalc";
 import MainNav from "./components/MainNav";
+import CosmoticGrid from "./pages/cosmotic/CosmoticGrid";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -36,7 +37,7 @@ function App() {
 
           <Route path="/indication/:ScientificName" element={<Indication />} />
           <Route path="/cosmotics/*" element={<Cosmotics />} />
-
+          <Route path="/cosmoticGrid" element={<CosmoticGrid />} />
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/login" element={<Login />} />
         </Routes>
