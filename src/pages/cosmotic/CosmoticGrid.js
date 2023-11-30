@@ -71,7 +71,7 @@ const InfiniteScrollExample = () => {
     <div>
       <h2>CosmoticSF infinite scroll</h2>
       <section className="d-flex">
-        <div className="1-sb col-2 border-end  border-warning" >
+        <div className="1-sb col-1 border-end  border-warning" >
           {companies.map((c, i) => (
             <label className="me-2 d-flex" key={i}>
               <input

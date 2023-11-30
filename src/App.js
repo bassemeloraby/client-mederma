@@ -26,7 +26,7 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <div className="container">
+      <div className="">
       <MainNav/>
       {user && <IdleTimerContainer></IdleTimerContainer>}
         <Routes>
