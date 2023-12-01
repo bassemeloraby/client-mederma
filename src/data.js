@@ -37,6 +37,11 @@ export const mainPages = [
         name: "Diapers",
         link: "/cosmotics/diapers",
         icon: ""
+      },
+      {
+        name: "Companies",
+        link: "/Companies",
+        icon: ""
       }
     ],
   },

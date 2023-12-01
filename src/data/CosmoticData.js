@@ -52,6 +52,61 @@ export const CompanyDb = [
     name: "EUCERIN",
     ourPro:'https://www.en.eucerin-me.com/products/'
   },
+  {
+    id: 3,
+    name: "PALMERS",
+    ourPro:'https://me.palmers.com/en/skin-hair-collection/'
+  },
+  {
+    id: 4,
+    name: "MAXON",
+    ourPro:'https://maxonme.com/products/'
+  },
+  {
+    id: 5,
+    name: "SEBAMED",
+    ourPro:'https://www.sebamed.com/products/'
+  },
+  {
+    id: 6,
+    name: "MUSTELA",
+    ourPro:'https://www.mustela.com/en/'
+  },
+  {
+    id: 7,
+    name: "AVENE",
+    ourPro:'https://www.aveneusa.com/collections/'
+  },
+  {
+    id: 8,
+    name: "COSMO",
+    ourPro:''
+  },
+  {
+    id: 9,
+    name: "CETAPHIL",
+    ourPro:'https://www.cetaphil-me.com/en/'
+  },
+  {
+    id: 10,
+    name: "QV",
+    ourPro:'https://www.qvskincareme.com/ksa/en/products/'
+  },
+  {
+    id: 11,
+    name: "BEPANTHEN",
+    ourPro:'https://www.bepanthen.me/en/'
+  },
+  {
+    id: 12,
+    name: "BIOBALANCE",
+    ourPro:'https://www.biobalance.com.tr/'
+  },
+  {
+    id: 13,
+    name: "LCAPHARMA",
+    ourPro:'https://www.lcapharma.com/en/'
+  },
 ];
 
 export const companyCategoryDb = [
