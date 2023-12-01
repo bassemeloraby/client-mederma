@@ -79,6 +79,7 @@ const Cosmotics = () => {
                 items={items}
                 setUpdateProduct={setUpdateProduct}
                 user={user}
+                setItems={setItems}
               />
             </Fragment>
           }

@@ -2,13 +2,22 @@ import { Virtuoso } from "react-virtuoso";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import GoogleLink from "../GoogleLink";
+import axios from "axios";
+import { mainUrl } from "../../data";
 
-const CosmoticList = ({ items, user, setUpdateProduct }) => {
+const url = mainUrl + "products";
+
+const CosmoticList = ({ items, user, setUpdateProduct, setItems }) => {
   const navigate = useNavigate();
   const editHandler = (prod) => {
     setUpdateProduct(prod);
     navigate(`/cosmotics/cosmoticUpdate/${prod._id}`);
     console.log(prod._id);
+  };
+  const deleteHandler = async (id) => {
+    await axios.delete(`${url}/${id}`);
+    const newList = items.filter((it) => it._id !== id);
+    setItems(newList);
   };
   return (
     <div>
@@ -57,6 +66,12 @@ const CosmoticList = ({ items, user, setUpdateProduct }) => {
                 <div>
                   <Button variant="success" onClick={() => editHandler(prod)}>
                     Edit
+                  </Button>{" "}
+                  <Button
+                    variant="danger"
+                    onClick={() => deleteHandler(prod._id)}
+                  >
+                    Delete
                   </Button>{" "}
                 </div>
               )}
