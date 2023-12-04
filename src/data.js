@@ -51,7 +51,7 @@ export const mainPages = [
     ping: [{ name: "insurance", link: "/insurance" }],
   },
   {
-    id: 3,
+    id: 4,
     text: "CosmoticGrid",
     ping: [{ name: "CosmoticGrid", link: "/cosmoticGrid" }],
   },

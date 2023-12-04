@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Companies = () => {
   return (
-    <div>
+    <div className="container">
       <h2>Companies</h2>
       <Table striped bordered hover size="sm">
         <thead>
@@ -19,12 +19,12 @@ const Companies = () => {
           {CompanyDb.map((c, i) => {
             const { id, name, ourPro } = c;
             return (
-              <tr>
+              <tr key={id}>
                 <td>{id}</td>
                 <td>{name}</td>
-                <td>
-                  <Link to={ourPro} target="_blank" rel="noopener noreferrer">
-                    {ourPro}
+                <td >
+                  <Link className="text-wrap" to={ourPro} target="_blank" rel="noopener noreferrer">
+                  {name}
                   </Link>
                 </td>
               </tr>

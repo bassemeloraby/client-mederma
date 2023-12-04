@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../components/Footer";
 // import start1 from "../images/start1.png";
 function Home() {
   return (
@@ -26,6 +27,7 @@ function Home() {
           I have added new page for calculations ,go to it from Medicine{" "}
         </section>
       </section>
+      <Footer />
     </Fragment>
   );
 }

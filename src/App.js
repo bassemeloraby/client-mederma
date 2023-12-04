@@ -11,7 +11,6 @@ import Cosmotics from "./pages/cosmotic/Cosmotics";
 import Indication from "./pages/medicine/Indication";
 import IdleTimerContainer from "./components/IdleTimerContainer";
 import { useSelector } from "react-redux";
-import Footer from "./components/Footer";
 import NotFind from "./pages/NotFind";
 import MedCalc from "./pages/medicine/MedCalc";
 import MainNav from "./components/MainNav";
@@ -47,7 +46,7 @@ function App() {
           <ToastContainer className="justify-content-md-center" />
         </div>
       </div>
-      <Footer />
+     
     </Fragment>
   );
 }
