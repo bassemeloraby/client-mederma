@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { mainUrl } from "../../data";
 import axios from "axios";
@@ -60,11 +60,11 @@ const AllDrugs = () => {
         <Route
           path="allDugsSearch"
           element={
-            <Fragment>
+            <div className="container">
               {" "}
               <AllDugsSearch setQuery={setQuery} />
               <AllDrugsList items={items} setScientific={setScientific}/>
-            </Fragment>
+            </div>
           }
         />
         <Route path="scientificName" element={<ScientificName allDrugs={allDrugs} scientific={scientific}  />} />

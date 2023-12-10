@@ -3,7 +3,7 @@ import { InputGroup, Form } from "react-bootstrap";
 
 function AllDugsSearch({setQuery}) {
   return (
-    <div>
+    <div className='col-4 shadow'>
     <InputGroup className="mb-3">
     <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
     <Form.Control

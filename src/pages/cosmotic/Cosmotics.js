@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { mainUrl } from "../../data";
@@ -72,7 +72,7 @@ const Cosmotics = () => {
         <Route
           path="cosmoticSearch"
           element={
-            <Fragment>
+            <div className="container">
               {" "}
               <CosmoticSearch setQuery={setQuery} />
               <CosmoticList
@@ -81,7 +81,7 @@ const Cosmotics = () => {
                 user={user}
                 setItems={setItems}
               />
-            </Fragment>
+            </div>
           }
         />
 
