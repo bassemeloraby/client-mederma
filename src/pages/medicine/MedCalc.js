@@ -3,11 +3,14 @@ import React, { Fragment } from "react";
 // import dose1 from "../../images/medicineImage/dose1.jpeg";
 import dose2 from "../../images/medicineImage/dose2.jpeg";
 import dose3 from "../../images/medicineImage/dose3.jpeg";
+import Tot from "../../components/medicine/Tot";
 
 function MedCalc() {
   return (
     <Fragment>
       <div className="container">
+      <Tot/>
+
         <section className="home">
           <section className="home-header">
             <h2 className="">Welcome to my med-calc</h2>
