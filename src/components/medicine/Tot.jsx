@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
+import { takeScreenShot } from "../../utils";
 
 const Tot = () => {
   const [master, setMaster] = useState(0);
@@ -19,8 +20,13 @@ const Tot = () => {
     setVat(0);
   };
 
+  const captureScreenShot = () => {
+    takeScreenShot("capDiv","MyImage","image/jpeg","#f5f5f5")
+  }
+
   return (
     <div className="mt-2 d-flex">
+    
       <section className="1 col-3 me-2">
         {" "}
         <Table striped bordered hover variant="primary">
@@ -63,7 +69,7 @@ const Tot = () => {
           </tbody>
         </Table>
       </section>
-      <section className="2 col-3">
+      <section className="2 col-3 p-2" id="capDiv">
         {" "}
         <Table striped bordered hover variant="success">
           <thead>
@@ -116,6 +122,7 @@ const Tot = () => {
           <button onClick={clear} className="bg-danger">
             clear
           </button>
+          <button onClick={captureScreenShot}>screenshot</button>
         </Table>
       </section>
     </div>
