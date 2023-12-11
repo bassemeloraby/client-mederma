@@ -21,12 +21,11 @@ const Tot = () => {
   };
 
   const captureScreenShot = () => {
-    takeScreenShot("capDiv","MyImage","image/jpeg","#f5f5f5")
-  }
+    takeScreenShot("capDiv", "MyImage", "image/jpeg", "#f5f5f5");
+  };
 
   return (
     <div className="mt-2 d-flex">
-    
       <section className="1 col-3 me-2">
         {" "}
         <Table striped bordered hover variant="primary">
@@ -69,7 +68,8 @@ const Tot = () => {
           </tbody>
         </Table>
       </section>
-      <section className="2 col-3 p-2" id="capDiv">
+
+      <section className="2 col-4 rounded border border-5 border-primary" id="capDiv">
         {" "}
         <Table striped bordered hover variant="success">
           <thead>
