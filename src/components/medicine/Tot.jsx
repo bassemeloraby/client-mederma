@@ -25,7 +25,7 @@ const Tot = () => {
   };
 
   return (
-    <div className="mt-2 d-flex">
+    <div className="mt-2">
       <section className="1 col-3 me-2">
         {" "}
         <Table striped bordered hover variant="primary">
@@ -69,54 +69,57 @@ const Tot = () => {
         </Table>
       </section>
 
-      <section className="2 col-4 rounded border border-5 border-primary" id="capDiv">
+      <section
+        className="2 col-3 rounded border border-5 border-primary"
+        id="capDiv"
+      >
         {" "}
         <Table striped bordered hover variant="success">
           <thead>
             <tr>
               <th>Kind</th>
-              <th>Value</th>
+              
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Cash</td>
-              <td>{tot - (parseInt(bank) + parseInt(insurance))}</td>
-            </tr>
-            <tr>
-              <td>Span</td>
               <td>
-                {" "}
-                <span className="border">{bank}</span>
+                Cash :<td>{tot - (parseInt(bank) + parseInt(insurance))}</td>
               </td>
             </tr>
             <tr>
-              <td>Insurance</td>
               <td>
+                Span : <span className="border">{bank}</span>
+              </td>
+            
+            </tr>
+            <tr>
+              <td>
+                Insurance{" "}
                 <input
                   value={insurance}
                   onChange={(e) => setInsurance(e.target.value)}
                 />
               </td>
+              
             </tr>
             <tr>
-              <td>Tot</td>
               <td>
-                {" "}
+                Tot{" "}
                 <input value={tot} onChange={(e) => setTot(e.target.value)} />
               </td>
+              
             </tr>
             <tr>
-              <td>Vat</td>
               <td>
+                Vat{" "}
                 <input value={vat} onChange={(e) => setVat(e.target.value)} />
               </td>
+              
             </tr>
             <tr>
-              <td>Tot - Vat</td>
-              <td>
-                <span>{tot - vat} </span>
-              </td>
+              <td>Tot - Vat : <span>{tot - vat} </span></td>
+              
             </tr>
           </tbody>
           <button onClick={clear} className="bg-danger">
