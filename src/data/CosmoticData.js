@@ -280,7 +280,7 @@ export const updateFormDb = [
 export const skinKindDb = [
   {
     id: 1,
-    name: "skinSenstivety",
+    name: "skinSensitivity",
     option1: "no skin Senstivety",
     option2: "Senstive",
   },
