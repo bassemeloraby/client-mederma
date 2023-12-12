@@ -51,8 +51,8 @@ const CosmoticGridCard = ({prod}) => {
             {prod.usedArea2}
           </ListGroup.Item>
           <ListGroup.Item>
-            Skin Kind: {prod.skinSenstivety}
-            {!prod.skinSenstivety && ""}
+            Skin Kind: {prod.skinSensitivity}
+            {!prod.skinSensitivity && ""}
             {prod.normalSkin && " and "}
             {prod.normalSkin}
             {prod.drySkin && " and "}

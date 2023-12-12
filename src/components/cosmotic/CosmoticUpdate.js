@@ -36,7 +36,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     use2: updateProduct.use2,
     usedArea1: updateProduct.usedArea1,
     usedArea2: updateProduct.usedArea2,
-    skinSensitivety: updateProduct.skinSensitivety,
+    skinSensitivity: updateProduct.skinSensitivity,
     normalSkin: updateProduct.normalSkin,
     drySkin: updateProduct.drySkin,
     oilySkin: updateProduct.oilySkin,
@@ -54,6 +54,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     fregranceFree: updateProduct.fregranceFree,
     dose: updateProduct.dose,
     intBarcode: updateProduct.intBarcode,
+    intBarcode1: updateProduct.intBarcode1,
   });
 
   const {
@@ -67,7 +68,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     use2,
     usedArea1,
     usedArea2,
-    skinSensitivety,
+    skinSensitivity,
     normalSkin,
     drySkin,
     oilySkin,
@@ -85,6 +86,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     fregranceFree,
     dose,
     intBarcode,
+    intBarcode1,
   } = formData;
   // -----------functions-------------//
   const cancelHandler = () => {
@@ -113,7 +115,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         use2,
         usedArea1,
         usedArea2,
-        skinSensitivety,
+        skinSensitivity,
         normalSkin,
         drySkin,
         oilySkin,
@@ -131,6 +133,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         fregranceFree,
         dose,
         intBarcode,
+        intBarcode1,
       });
 
       setLoading(false);
@@ -146,7 +149,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         uu.use2 = use2;
         uu.usedArea1 = usedArea1;
         uu.usedArea2 = usedArea2;
-        uu.skinSensitivety = skinSensitivety;
+        uu.skinSensitivity = skinSensitivity;
         uu.normalSkin = normalSkin;
         uu.drySkin = drySkin;
         uu.oilySkin = oilySkin;
@@ -164,6 +167,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         uu.fregranceFree = fregranceFree;
         uu.dose = dose;
         uu.intBarcode = intBarcode;
+        uu.intBarcode1 = intBarcode1;
       }
       navigate(`/cosmotics/cosmoticCard/${id}`);
     } catch (error) {
@@ -204,9 +208,8 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
         style={{ backgroundColor: "brown" }}
         className="p-2 text-light mb-2 rounded-2"
       >
-     
         <div className="12 d-flex justify-content-around">
-         {/*----------------------- the left half --------------------------------------------------- */}
+          {/*----------------------- the left half --------------------------------------------------- */}
           <section className="1 col-6">
             {" "}
             {/*---------start updateProduct Description---------*/}
@@ -280,9 +283,9 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                 ))}
               </section>
             </div>
-             {/*--------------------------start dose---------------------------------------- */}
+            {/*--------------------------start dose---------------------------------------- */}
             <div className="1-2 bg-success p-2 mb-2 rounded-2 justify-content-center">
-            <FormLabel> Dose</FormLabel>
+              <FormLabel> Dose</FormLabel>
               <Form.Group className="">
                 <Form.Control placeholder={dose} disabled className="mb-2" />
               </Form.Group>
@@ -294,12 +297,32 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                 />
               </Form.Group>
             </div>
-             {/*--------------------------start intBarcode---------------------------------------- */}
+            {/*--------------------------start intBarcode---------------------------------------- */}
             <div className="1-2 bg-success p-2 mb-2 rounded-2 justify-content-center">
-            <FormLabel>International barcode</FormLabel>
+              <FormLabel>International barcode</FormLabel>
 
               <Form.Group className="">
-                <Form.Control placeholder={intBarcode} disabled className="mb-2" />
+                <Form.Control
+                  placeholder={intBarcode}
+                  disabled
+                  className="mb-2"
+                />
+              </Form.Group>
+              <Form.Group className="">
+                <Form.Control
+                  className="mb-2"
+                  onChange={onChange}
+                  name="intBarcode"
+                />
+              </Form.Group>
+              <FormLabel>International barcode 1</FormLabel>
+
+              <Form.Group className="">
+                <Form.Control
+                  placeholder={intBarcode1}
+                  disabled
+                  className="mb-2"
+                />
               </Form.Group>
               <Form.Group className="">
                 <Form.Control
@@ -310,7 +333,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
               </Form.Group>
             </div>
           </section>
-           {/*----------------------- the wright half --------------------------------------------------- */}
+          {/*----------------------- the wright half --------------------------------------------------- */}
           <section className="2">
             {" "}
             {/*----start company product name --------*/}
@@ -329,7 +352,6 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             {/*---------start updateProduct Company---------*/}
             <FormLabel> Company</FormLabel>
             <div className="bg-success p-2 mb-2 rounded-2 d-flex">
-            
               <Form.Group className="me-2">
                 <Form.Control placeholder={Company} disabled />
               </Form.Group>
@@ -351,7 +373,6 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             {/*---------end updateProduct Company---------*/}
             {/*---------start updateProduct compProType---------*/}
             <FormLabel> Company Product Type</FormLabel>
-
             <div className="bg-success p-2 mb-2 rounded-2 d-flex">
               <Form.Group className="me-2">
                 <Form.Control placeholder={compProType} disabled />
@@ -532,7 +553,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                 {" "}
                 <Form.Group className="mb-2">
                   <Form.Control
-                    placeholder={skinSensitivety}
+                    placeholder={skinSensitivity}
                     disabled
                     className="border-bottom border-warning"
                   />
