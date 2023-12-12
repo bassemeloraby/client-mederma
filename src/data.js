@@ -56,6 +56,25 @@ export const mainPages = [
     ping: [{ name: "CosmoticGrid", link: "/cosmoticGrid" }],
   },
 ];
+export const adminPages = [
+  {
+    id: 1,
+    text: "Medicine Admin",
+    ping: [
+      { name: "search", link: "/allD/allDugsSearch", icon: <FcSearch /> },
+      { name: "MedCalc", link: "/medCalc" },
+    ],
+  },
+  {
+    id: 2,
+    text: "Cosmotic Admin",
+    ping: [
+      { name: "table", link: "/cosmoticAdmin", icon: "" },
+      { name: "MedCalc", link: "/medCalc" },
+    ],
+  },
+  
+];
 
 export const mainUrl = "https://rich-blue-llama-vest.cyclic.cloud/api/";
 

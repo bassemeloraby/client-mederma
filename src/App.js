@@ -16,6 +16,8 @@ import MedCalc from "./pages/medicine/MedCalc";
 import MainNav from "./components/MainNav";
 import CosmoticGrid from "./pages/cosmotic/CosmoticGrid";
 import Companies from "./pages/cosmotic/Companies";
+import AdminNav from "./components/AdminNav";
+import CosmoticAdmin from "./pages/cosmotic/CosmoticAdmin";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -28,6 +30,8 @@ function App() {
       <Header />
       <div className="">
       <MainNav/>
+      {user&&<AdminNav/>}
+      
       {user && <IdleTimerContainer></IdleTimerContainer>}
         <Routes>
           <Route path="/*" element={<NotFind />} />
@@ -41,6 +45,9 @@ function App() {
           <Route path="/companies" element={<Companies />} />
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/login" element={<Login />} />
+          {/*admin */}
+          <Route path="/cosmoticAdmin" element={<CosmoticAdmin/>} />
+
         </Routes>
         <div style={{ width: "50px", textAlign: "center", margin: "auto" }}>
           <ToastContainer className="justify-content-md-center" />

@@ -11,6 +11,7 @@ import CosmoticCard from "../../components/cosmotic/CosmoticCard";
 import CosmoticFilter from "../../components/cosmotic/CosmoticFilter";
 import CosmoticSF from "../../components/cosmotic/CosmoticSF";
 import Diaper from "../../components/cosmotic/Diaper";
+import CosmoticAdmin from "./CosmoticAdmin";
 
 // const url = "/api/products";
 const url = mainUrl + "products";
@@ -132,6 +133,15 @@ const Cosmotics = () => {
               cosmotics={cosmotics}
               user={user}
               setUpdateProduct={setUpdateProduct}
+            />
+          }
+        />
+        <Route
+          path="cosmoticAdmin"
+          element={
+            <CosmoticAdmin
+              cosmotics={cosmotics}
+              user={user}
             />
           }
         />
