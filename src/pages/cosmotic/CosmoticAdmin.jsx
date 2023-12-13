@@ -50,18 +50,21 @@ const CosmoticAdmin = () => {
             <Table striped bordered hover size="sm">
               <thead>
                 <tr>
+                  <th>Company</th>
                   <th>Description</th>
                   <th>intBarcode</th>
-                  <th>Website</th>
+                  <th>intBarcode1</th>
                 </tr>
               </thead>
               <tbody>
                 {items.map((it, i) => {
-                  const { Description,intBarcode } = it;
+                  const { Company, Description, intBarcode, intBarcode1 } = it;
                   return (
                     <tr key={i}>
+                      <td>{Company}</td>
                       <td>{Description}</td>
                       <td>{intBarcode}</td>
+                      <td>{intBarcode1}</td>
                     </tr>
                   );
                 })}
