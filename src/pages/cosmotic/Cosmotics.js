@@ -5,13 +5,13 @@ import { mainUrl } from "../../data";
 import axios from "axios";
 import Spinner from "../../components/Spinner";
 import CosmoticList from "../../components/cosmotic/CosmoticList";
-import CosmoticSearch from "../../components/cosmotic/CosmoticSearch";
 import CosmoticUpdate from "../../components/cosmotic/CosmoticUpdate";
 import CosmoticCard from "../../components/cosmotic/CosmoticCard";
 import CosmoticFilter from "../../components/cosmotic/CosmoticFilter";
 import CosmoticSF from "../../components/cosmotic/CosmoticSF";
 import Diaper from "../../components/cosmotic/Diaper";
 import CosmoticAdmin from "./CosmoticAdmin";
+import SearchInput from "../../components/SearchInput";
 
 // const url = "/api/products";
 const url = mainUrl + "products";
@@ -75,7 +75,7 @@ const Cosmotics = () => {
           element={
             <div className="container">
               {" "}
-              <CosmoticSearch setQuery={setQuery} />
+              <SearchInput setQuery={setQuery} />
               <CosmoticList
                 items={items}
                 setUpdateProduct={setUpdateProduct}

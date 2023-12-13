@@ -5,8 +5,8 @@ import axios from "axios";
 
 import Spinner from "../../components/Spinner";
 import AllDrugsList from "../../components/medicine/AllDrugsList";
-import AllDugsSearch from "../../components/medicine/AllDugsSearch";
 import ScientificName from "../../components/medicine/ScientificName";
+import SearchInput from "../../components/SearchInput";
 const url = mainUrl + "allDrugs";
 
 const AllDrugs = () => {
@@ -62,7 +62,7 @@ const AllDrugs = () => {
           element={
             <div className="container">
               {" "}
-              <AllDugsSearch setQuery={setQuery} />
+              <SearchInput setQuery={setQuery} />
               <AllDrugsList items={items} setScientific={setScientific}/>
             </div>
           }

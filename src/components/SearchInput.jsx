@@ -1,14 +1,14 @@
 import React from 'react'
 import { InputGroup, Form } from "react-bootstrap";
 
-function AllDugsSearch({setQuery}) {
+const SearchInput = ({setQuery}) => {
   return (
     <div className='col-4 shadow'>
     <InputGroup className="mb-3">
     <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
     <Form.Control
       type="text"
-      placeholder="Search by Trade Name or Scientific Name"
+      placeholder="Enter Search Value"
       autoComplete="off"
       autoFocus
       onChange={(e) => setQuery(e.target.value)}
@@ -18,4 +18,4 @@ function AllDugsSearch({setQuery}) {
   )
 }
 
-export default AllDugsSearch
+export default SearchInput
