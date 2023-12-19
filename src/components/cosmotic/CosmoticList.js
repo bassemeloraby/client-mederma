@@ -4,10 +4,22 @@ import Button from "react-bootstrap/Button";
 import GoogleLink from "../GoogleLink";
 import axios from "axios";
 import { mainUrl } from "../../data";
+import { useState } from "react";
+import CloseModal from "../CloseModal";
 
 const url = mainUrl + "products";
 
-const CosmoticList = ({ items, user, setUpdateProduct, setItems }) => {
+const CosmoticList = ({
+  items,
+  user,
+  setUpdateProduct,
+  setItems,
+  loading,
+  setLoading,
+}) => {
+  const [show, setShow] = useState(false);
+  const [prodModal, setProdModal] = useState();
+
   const navigate = useNavigate();
   const editHandler = (prod) => {
     setUpdateProduct(prod);
@@ -15,9 +27,22 @@ const CosmoticList = ({ items, user, setUpdateProduct, setItems }) => {
     console.log(prod._id);
   };
   const deleteHandler = async (id) => {
-    await axios.delete(`${url}/${id}`);
-    const newList = items.filter((it) => it._id !== id);
-    setItems(newList);
+    setLoading(true);
+    try {
+      await axios.delete(`${url}/${id}`);
+      const newList = items.filter((it) => it._id !== id);
+      setLoading(false);
+      setItems(newList);
+    } catch (error) {
+      console.log("Failed to delete");
+      setLoading(false);
+    }
+  };
+  const handleClose = () => setShow(false);
+
+  const deleteModal = (prod) => {
+    setShow(true);
+    setProdModal(prod);
   };
   return (
     <div>
@@ -61,18 +86,26 @@ const CosmoticList = ({ items, user, setUpdateProduct, setItems }) => {
                   Card
                 </Button>{" "}
               </div>
-
+              <CloseModal
+                show={show}
+                handleClose={handleClose}
+                prodModal={prodModal}
+                deleteHandler={deleteHandler}
+              />
               {user && (
                 <div>
                   <Button variant="success" onClick={() => editHandler(prod)}>
                     Edit
                   </Button>{" "}
-                  <Button
+                  <Button variant="success" onClick={() => deleteModal(prod)}>
+                    delet modal
+                  </Button>{" "}
+                  {/* <Button
                     variant="danger"
                     onClick={() => deleteHandler(prod._id)}
                   >
                     Delete
-                  </Button>{" "}
+                  </Button>{" "}*/}
                 </div>
               )}
             </div>

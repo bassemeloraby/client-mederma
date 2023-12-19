@@ -21,7 +21,6 @@ const Cosmotics = () => {
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState();
   const [updateProduct, setUpdateProduct] = useState();
-  
 
   const { user } = useSelector((state) => state.auth);
 
@@ -81,6 +80,8 @@ const Cosmotics = () => {
                 setUpdateProduct={setUpdateProduct}
                 user={user}
                 setItems={setItems}
+                loading={loading}
+                setLoading={setLoading}
               />
             </div>
           }
@@ -88,7 +89,7 @@ const Cosmotics = () => {
 
         {/*-----------------CosmoticUpdate-----------------*/}
         <Route
-        key={1}
+          key={1}
           path="cosmoticUpdate/:id"
           element={
             <CosmoticUpdate
@@ -102,7 +103,13 @@ const Cosmotics = () => {
 
         <Route
           path="cosmoticCard/:id"
-          element={<CosmoticCard  cosmotics={cosmotics} setUpdateProduct={setUpdateProduct} user={user}/>}
+          element={
+            <CosmoticCard
+              cosmotics={cosmotics}
+              setUpdateProduct={setUpdateProduct}
+              user={user}
+            />
+          }
         />
         {/*-----------------cosmoticFilter-----------------*/}
 
@@ -138,12 +145,7 @@ const Cosmotics = () => {
         />
         <Route
           path="cosmoticAdmin"
-          element={
-            <CosmoticAdmin
-              cosmotics={cosmotics}
-              user={user}
-            />
-          }
+          element={<CosmoticAdmin cosmotics={cosmotics} user={user} />}
         />
       </Routes>
     </div>
