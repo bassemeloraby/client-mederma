@@ -106,6 +106,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     setLoading(true);
     try {
       const res = await axios.patch(`${url}/${id}`, {
+        Description,
         Company,
         compProType,
         form,
@@ -140,6 +141,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
       console.log(res.data);
       const uu = cosmotics.find((comp) => comp._id === id);
       if (uu) {
+        uu.Description = Description;
         uu.Company = Company;
         uu.compProType = compProType;
         uu.form = form;
@@ -215,6 +217,7 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
             {/*---------start updateProduct Description---------*/}
             <div className="1-1">
               {" "}
+              
               <Form.Group className="text-center">
                 <Form.Label>Description</Form.Label>
                 <Form.Control
@@ -222,6 +225,12 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   disabled
                   className="mb-2 "
                 />
+                <Form.Control
+                className="mb-2"
+                onChange={onChange}
+                name="Description"
+                defaultValue={Description}
+              />
                 <GoogleLink color="white" name={Description} />
                 {CompanyDb.filter((c) => c.name === Company).map((c, i) => (
                   <Link
