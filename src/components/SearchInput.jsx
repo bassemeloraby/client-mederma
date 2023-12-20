@@ -3,7 +3,7 @@ import { InputGroup, Form } from "react-bootstrap";
 
 const SearchInput = ({setQuery}) => {
   return (
-    <div className='col-4 shadow'>
+    <div className=' shadow'>
     <InputGroup className="mb-3">
     <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
     <Form.Control
