@@ -67,7 +67,7 @@ const CosmoticList = ({
           >
             <div className="">
               {" "}
-              <h3>{prod.Description}</h3>
+              <h3>{prod.Description} {prod.Strength} {prod.StrengthUnit}</h3>
               <h6>{prod.Company} </h6>
               <h6>
                 {prod.use1} {prod.use2 && "and"} {prod.use2} for{" "}
