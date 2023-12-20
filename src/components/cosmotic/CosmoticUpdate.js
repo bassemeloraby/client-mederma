@@ -27,6 +27,8 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     Description: updateProduct.Description,
+    Strength: updateProduct.Strength,
+    StrengthUnit: updateProduct.StrengthUnit,
     Company: updateProduct.Company,
     compProType: updateProduct.compProType,
     form: updateProduct.form,
@@ -59,6 +61,8 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
 
   const {
     Description,
+    Strength,
+    StrengthUnit,
     Company,
     compProType,
     form,
@@ -107,6 +111,8 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
     try {
       const res = await axios.patch(`${url}/${id}`, {
         Description,
+        Strength,
+        StrengthUnit,
         Company,
         compProType,
         form,
@@ -142,6 +148,8 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
       const uu = cosmotics.find((comp) => comp._id === id);
       if (uu) {
         uu.Description = Description;
+        uu.Strength = Strength;
+        uu.StrengthUnit = StrengthUnit;
         uu.Company = Company;
         uu.compProType = compProType;
         uu.form = form;
@@ -252,8 +260,36 @@ const CosmoticUpdate = ({ cosmotics, updateProduct }) => {
                   </div>
                 )}
 
+                </Form.Group>
                 {/*---------end updateProduct img---------*/}
-              </Form.Group>
+                {/*---------end updateProduct Strength and StrengthUnit---------*/}
+              <Form.Group className="text-center">
+                <Form.Label>Strength</Form.Label>
+                <Form.Control
+                  placeholder={Strength}
+                  disabled
+                  className="mb-2 "
+                />
+                <Form.Control
+                className="mb-2"
+                onChange={onChange}
+                name="Strength"
+                defaultValue={Strength}
+              /></Form.Group>
+              {/*-------------StrengthUnit--------- */}
+              <Form.Group className="text-center">
+                <Form.Label>StrengthUnit</Form.Label>
+                <Form.Control
+                  placeholder={StrengthUnit}
+                  disabled
+                  className="mb-2 "
+                />
+                <Form.Control
+                className="mb-2"
+                onChange={onChange}
+                name="StrengthUnit"
+                defaultValue={StrengthUnit}
+              /></Form.Group>
             </div>
             <div className="1-2 d-flex bg-success p-2 mb-2 rounded-2 justify-content-center">
               <section className="1-2-1 me-2">
