@@ -6,9 +6,12 @@ import insc3 from "../../images/inscTel-3.png";
 import insc4 from "../../images/inscTel-4.png";
 import insc5 from "../../images/inscTel-5.png";
 import { insuranceLinks } from "../../data";
+
+const inscImages = [insc1, insc2, insc3, insc4, insc5];
+
 function Insurance() {
   return (
-    <section className="">
+    <section>
       <div className="d-flex justify-content-center">
         <h3>Insurance</h3>{" "}
       </div>
@@ -39,12 +42,9 @@ function Insurance() {
       </div>
 
       <div className="d-flex justify-content-around flex-wrap">
-        {" "}
-        <img src={insc1} alt="insurance1" className=""></img>
-        <img src={insc2} alt="insurance2"></img>
-        <img src={insc3} alt="insurance3"></img>
-        <img src={insc4} alt="insurance4"></img>
-        <img src={insc5} alt="insurance5"></img>
+        {inscImages.map((ins, i) => (
+          <img src={ins} alt="insurance2" key={i} />
+        ))}
       </div>
     </section>
   );
