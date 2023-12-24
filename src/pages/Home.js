@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Footer from "../components/Footer";
-// import start1 from "../images/start1.png";
+import Saxenda from "../images/Saxenda.png";
 function Home() {
   return (
     <Fragment>
@@ -17,10 +17,10 @@ function Home() {
             our website and helping us to know about the needs of every
             pharmacist in his job
           </p>
-          {/* <div className="mb-2 row">
-            <span>clik here to move in website</span>
-            <img src={start1} alt="insurance2" className="border"></img>
-          </div>*/}
+          <div className="mb-2 row">
+            <span>Saxenda</span>
+            <img src={Saxenda} alt="Saxenda" className="border"></img>
+          </div>
         </section>
         <section>
           {" "}
