@@ -63,7 +63,7 @@ function Header() {
                     title={mainPage.text}
                     id="basic-nav-dropdown"
                     key={mainPage.id}
-                    className="p-2 border-bottom  border-success"
+                    className="p-2 border-bottom  border-success text-dark"
                   >
                     {mainPage.ping.map((m, index) => (
                       <NavDropdown.Item

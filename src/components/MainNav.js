@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 import { mainPages } from '../data';
 const MainNav = () => {
   return (
-    <Nav variant="" activeKey="1" className=' bg-dark' >
+    <Nav variant="" activeKey="1" className='bg-primary-subtle' >
       
     {mainPages.map((mainPage) => (
         <NavDropdown
           title={mainPage.text}
           id="basic-nav-dropdown"
           key={mainPage.id}
-          className="p-2 border-bottom  border-success  displayNone"
+          className="p-2 border-bottom  border-success  displayNone text-dark "
+          style={{color:"black"}}
         >
           {mainPage.ping.map((m, index) => (
             <NavDropdown.Item
@@ -20,6 +21,7 @@ const MainNav = () => {
               to={m.link}
             //   onClick={handleClose}
               key={index}
+              style={{color:"black"}}
             >
               {m.name} {m.icon}
             </NavDropdown.Item>

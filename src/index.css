@@ -12,6 +12,14 @@ code {
     monospace;
 }
 
+a {
+  color: black;
+}
+
+.nav-link {
+  color:black !important;
+}
+
 /* spinner */
 .loadingSpinnerContainer {
   position: fixed;
