@@ -59,7 +59,7 @@ export const mainPages = [
   {
     id: 5,
     text: "Course",
-    ping: [{ name: "search", link: "/course" }],
+    ping: [{ name: "EXCEL", link: "/course" }],
   },
 ];
 export const adminPages = [
