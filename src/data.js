@@ -10,6 +10,7 @@ export const mainPages = [
       { name: "MedCalc", link: "/medCalc" },
     ],
   },
+
   {
     id: 2,
     text: "Cosmotics",
@@ -36,13 +37,13 @@ export const mainPages = [
       {
         name: "Diapers",
         link: "/cosmotics/diapers",
-        icon: ""
+        icon: "",
       },
       {
         name: "Companies",
         link: "/Companies",
-        icon: ""
-      }
+        icon: "",
+      },
     ],
   },
   {
@@ -54,6 +55,11 @@ export const mainPages = [
     id: 4,
     text: "CosmoticGrid",
     ping: [{ name: "CosmoticGrid", link: "/cosmoticGrid" }],
+  },
+  {
+    id: 5,
+    text: "Course",
+    ping: [{ name: "search", link: "/course" }],
   },
 ];
 export const adminPages = [
@@ -73,7 +79,6 @@ export const adminPages = [
       { name: "MedCalc", link: "/medCalc" },
     ],
   },
-  
 ];
 
 export const mainUrl = "https://rich-blue-llama-vest.cyclic.cloud/api/";

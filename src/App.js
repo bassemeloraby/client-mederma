@@ -18,6 +18,7 @@ import CosmoticGrid from "./pages/cosmotic/CosmoticGrid";
 import Companies from "./pages/cosmotic/Companies";
 import AdminNav from "./components/AdminNav";
 import CosmoticAdmin from "./pages/cosmotic/CosmoticAdmin";
+import Course from "./pages/Course";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -44,6 +45,7 @@ function App() {
           <Route path="/cosmoticGrid" element={<CosmoticGrid />} />
           <Route path="/companies" element={<Companies />} />
           <Route path="/insurance" element={<Insurance />} />
+          <Route path="/course" element={<Course />} />
           <Route path="/login" element={<Login />} />
           {/*admin */}
           <Route path="/cosmoticAdmin" element={<CosmoticAdmin/>} />
