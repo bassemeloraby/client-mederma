@@ -62,7 +62,7 @@ const AllDrugs = () => {
           element={
             <div className="container">
               {" "}
-              <SearchInput setQuery={setQuery} />
+              <SearchInput setQuery={setQuery} placeholder="enter Trade name or Scientific name"/>
               <AllDrugsList items={items} setScientific={setScientific}/>
             </div>
           }

@@ -45,67 +45,93 @@ export const CompanyDb = [
   {
     id: 1,
     name: "BIODERMA",
-    ourPro:'https://www.bioderma.sa/our-products/'
+    ourPro: "https://www.bioderma.sa/our-products/",
+    range: [
+      {
+        id: 1,
+        range_name: "SEBIUM",
+      },
+      {
+        id: 2,
+        range_name: "PHOTODERM",
+      },
+      {
+        id: 3,
+        range_name: "ATODERM",
+      },
+      {
+        id: 4,
+        range_name: "SENSIBIO",
+      },
+      {
+        id: 5,
+        range_name: "PIGMENTBIO",
+      },
+      {
+        id: 6,
+        range_name: "CICABIO",
+      },
+    ],
   },
   {
     id: 2,
     name: "EUCERIN",
-    ourPro:'https://www.en.eucerin-me.com/products/'
+    ourPro: "https://www.en.eucerin-me.com/products/",
   },
   {
     id: 3,
     name: "PALMERS",
-    ourPro:'https://me.palmers.com/en/skin-hair-collection/'
+    ourPro: "https://me.palmers.com/en/skin-hair-collection/",
   },
   {
     id: 4,
     name: "MAXON",
-    ourPro:'https://maxonme.com/products/'
+    ourPro: "https://maxonme.com/products/",
   },
   {
     id: 5,
     name: "SEBAMED",
-    ourPro:'https://www.sebamed.com/products/'
+    ourPro: "https://www.sebamed.com/products/",
   },
   {
     id: 6,
     name: "MUSTELA",
-    ourPro:'https://www.mustela.com/en/'
+    ourPro: "https://www.mustela.com/en/",
   },
   {
     id: 7,
     name: "AVENE",
-    ourPro:'https://www.aveneusa.com/collections/'
+    ourPro: "https://www.aveneusa.com/collections/",
   },
   {
     id: 8,
     name: "COSMO",
-    ourPro:''
+    ourPro: "",
   },
   {
     id: 9,
     name: "CETAPHIL",
-    ourPro:'https://www.cetaphil-me.com/en/'
+    ourPro: "https://www.cetaphil-me.com/en/",
   },
   {
     id: 10,
     name: "QV",
-    ourPro:'https://www.qvskincareme.com/ksa/en/products/'
+    ourPro: "https://www.qvskincareme.com/ksa/en/products/",
   },
   {
     id: 11,
     name: "BEPANTHEN",
-    ourPro:'https://www.bepanthen.me/en/'
+    ourPro: "https://www.bepanthen.me/en/",
   },
   {
     id: 12,
     name: "BIOBALANCE",
-    ourPro:'https://www.biobalance.com.tr/'
+    ourPro: "https://www.biobalance.com.tr/",
   },
   {
     id: 13,
     name: "LCAPHARMA",
-    ourPro:'https://www.lcapharma.com/en/'
+    ourPro: "https://www.lcapharma.com/en/",
   },
 ];
 
@@ -177,19 +203,19 @@ export const companyCategoryDb = [
 ];
 
 export const compProTypeDb = [
-  {name:"intensive-baume"},
-  {name:"baume-levres"},
-  {name:"creme"},
-  {name:"gel-douche"},
-  {name:"huile-de-douche"},
-  {name:"intensive-gel-moussant"},
-  {name:"intensive-pain"},
-  {name:"mains-ongles"},
-  {name:"nutritive"},
-  {name:"sos-spray"},
-  {name:"stick-levres"},
-  {name:"aquafluide-spf50"},
-]
+  { name: "intensive-baume" },
+  { name: "baume-levres" },
+  { name: "creme" },
+  { name: "gel-douche" },
+  { name: "huile-de-douche" },
+  { name: "intensive-gel-moussant" },
+  { name: "intensive-pain" },
+  { name: "mains-ongles" },
+  { name: "nutritive" },
+  { name: "sos-spray" },
+  { name: "stick-levres" },
+  { name: "aquafluide-spf50" },
+];
 
 export const formDb = [
   {

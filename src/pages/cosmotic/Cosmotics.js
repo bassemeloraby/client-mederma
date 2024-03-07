@@ -74,7 +74,7 @@ const Cosmotics = () => {
           element={
             <div className="container">
               {" "}
-              <SearchInput setQuery={setQuery} />
+              <SearchInput setQuery={setQuery} placeholder="enter id or company or product" />
               <CosmoticList
                 items={items}
                 setUpdateProduct={setUpdateProduct}

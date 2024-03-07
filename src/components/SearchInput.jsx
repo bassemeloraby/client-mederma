@@ -1,14 +1,14 @@
 import React from 'react'
 import { InputGroup, Form } from "react-bootstrap";
 
-const SearchInput = ({setQuery}) => {
+const SearchInput = ({setQuery,placeholder}) => {
   return (
     <div className=' shadow'>
     <InputGroup className="mb-3">
     <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
     <Form.Control
       type="text"
-      placeholder="Enter Search Value"
+      placeholder={placeholder}
       autoComplete="off"
       autoFocus
       onChange={(e) => setQuery(e.target.value)}
